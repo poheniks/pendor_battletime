@@ -1,2 +1,2 @@
 # pendor_battletime
-Pendor BattleTime
+Pendor with Battletime
