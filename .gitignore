@@ -1,5 +1,5 @@
 # pendor-specific
-ID_*
+#ID_* #we need these because of an import loop between items & constants
 
 
 
