@@ -1,4 +1,4 @@
-3270
+3268
 qstr_Next_Page Next_Page
 qstr_Co_op_Admin_Panel Co-op_Admin_Panel
 qstr_Game_Rules:^ Game_Rules:^
@@ -1694,8 +1694,6 @@ qstr_srvr_set19 srvr_set19
 qstr_Error:_WSE_is_not_ru Error:_WSE_is_not_running.
 qstr_Unknown Unknown
 qstr_Steppe_Bandit_Lair Steppe_Bandit_Lair
-qstr_Tundra_Bandit_Lair Tundra_Bandit_Lair
-qstr_Desert_Bandit_Lair Desert_Bandit_Lair
 qstr_Forest_Bandit_Camp Forest_Bandit_Camp
 qstr_Mountain_Bandit_Hide Mountain_Bandit_Hideout
 qstr_Sea_Raider_Landing Sea_Raider_Landing

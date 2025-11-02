@@ -496,26 +496,7 @@ scenes = [
  ("random_multi_steppe_medium", sf_generate|sf_randomize|sf_auto_entry_points, "none", "none", (0, 0), (100, 100), -0.5, "0x0000000128601ae300063d8f0004406900002920001e4f81",[], [], "outer_terrain_steppe"),
  ("random_multi_steppe_large", sf_generate|sf_randomize|sf_auto_entry_points, "none", "none", (0, 0), (100, 100), -0.5, "0x000000012a00d8630009fe7f0004406900002920001e4f81",[], [], "outer_terrain_steppe"),
  
- #COOP BEGIN########################################################################################################################
-  ("coop_random_lrg_plain",sf_generate|sf_randomize|sf_auto_entry_points,"none", "none", (0,0),(240,240),-0.5,"0x0000000333e00563800aa6a40004406900002920001e4f81",    [],[], "outer_terrain_plain"),#0x0000000135600d53000aa6a40004406900002920001e4f81
-  ("coop_random_lrg_steppe", sf_generate|sf_randomize|sf_auto_entry_points, "none", "none", (0,0),(240, 240), -0.5, "0x00000003220005630009fe7f0004406900002920001e4f81",    [],[], "outer_terrain_steppe"),#0x0000000122000b630009fe7f0004406900002920001e4f81
-  ("coop_random_lrg_snow",sf_generate|sf_randomize|sf_auto_entry_points,"none", "none", (0,0),(240,240),-0.5,"0x0000000344c00563000aa6a40004406900002920001e4f81",    [],[], "outer_terrain_snow"),
-  ("coop_random_lrg_desert",sf_generate|sf_randomize|sf_auto_entry_points,"none", "none", (0,0),(240,240),-0.5,"0x0000000350000563000aa6a40004406900002920001e4f81",    [],[], "outer_terrain_desert_b"),
-  ("coop_random_lrg_steppe_forest",sf_generate|sf_randomize|sf_auto_entry_points,"none", "none", (0,0),(240,240),-0.5,"0x00000003ac60d8630009fe7f0004406900002920001e4f81",    [],[], "outer_terrain_plain"),
-  ("coop_random_lrg_plain_forest",sf_generate|sf_randomize|sf_auto_entry_points,"none", "none", (0,0),(240,240),-0.5,"0x00000003bc600563800aa6a40004406900002920001e4f81",    [],[], "outer_terrain_plain"),
-  ("coop_random_lrg_snow_forest",sf_generate|sf_randomize|sf_auto_entry_points,"none", "none", (0,0),(240,240),-0.5,"0x00000003cc600563800aa6a40004406900002920001e4f81",    [],[], "outer_terrain_snow"),
-  ("coop_random_lrg_desert_forest",sf_generate|sf_randomize|sf_auto_entry_points,"none", "none", (0,0),(240,240),-0.5,"0x00000003dc600563000a769d0000034e00004b34000059be",    [],[], "outer_terrain_desert"),
 
-  ("coop_random_med_plain",sf_generate|sf_randomize|sf_auto_entry_points,"none", "none", (0,0),(100,100),-0.5,"0x0000000339400563000649920004406900002920000056d7",    [],[], "outer_terrain_plain"),#0x0000000135600d53000aa6a40004406900002920001e4f81
-  ("coop_random_med_steppe", sf_generate|sf_randomize|sf_auto_entry_points, "none", "none", (0,0),(100,100), -0.5, "0x0000000321c00563000649900004406900002920000056d7",    [],[], "outer_terrain_steppe"),#0x0000000122000b630009fe7f0004406900002920001e4f81
-  ("coop_random_med_snow",sf_generate|sf_randomize|sf_auto_entry_points,"none", "none", (0,0),(100,100),-0.5,"0x00000003434005630006418e0004406900002920001e4f81",    [],[], "outer_terrain_snow"),
-  ("coop_random_med_desert",sf_generate|sf_randomize|sf_auto_entry_points,"none", "none", (0,0),(100,100),-0.5,"0x00000003500005630006619c0004406900002920001e4f81",    [],[], "outer_terrain_desert_b"),
-  ("coop_random_med_steppe_forest",sf_generate|sf_randomize|sf_auto_entry_points,"none", "none", (0,0),(100,100),-0.5,"0x00000003ac60c56300063d8f0004406900002920001e4f81",    [],[], "outer_terrain_plain"),
-  ("coop_random_med_plain_forest",sf_generate|sf_randomize|sf_auto_entry_points,"none", "none", (0,0),(100,100),-0.5,"0x00000003bc600563800659960004406900002920001e4f81",    [],[], "outer_terrain_plain"),
-  ("coop_random_med_snow_forest",sf_generate|sf_randomize|sf_auto_entry_points,"none", "none", (0,0),(100,100),-0.5,"0x00000003cc6005630006358b0004406900002920001e4f81",    [],[], "outer_terrain_snow"),
-  ("coop_random_med_desert_forest",sf_generate|sf_randomize|sf_auto_entry_points,"none", "none", (0,0),(100,100),-0.5,"0x00000003dc6005630006298c0000034e00004b34000059be",    [],[], "outer_terrain_desert"),
-#COOP END#####################################################################################################
- 
  ("multiplayer_maps_end", sf_generate, "none", "none", (0, 0), (100, 100), -100, "0x00000001300389800003a4ea000058340000637a0000399b",[], [], "outer_terrain_plain"),
  ("wedding", sf_indoors, "castle_h_interior_a_wedding", "bo_castle_h_interior_a", (-100, -100), (100, 100), -100, "0",[], []),
  ("lair_steppe_bandits", sf_generate, "none", "none", (0, 0), (100, 100), -100, "0x00000000200c69ac80043d0d0000556b0000768400003ea9",[], [], "outer_terrain_steppe"),

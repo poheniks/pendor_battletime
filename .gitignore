@@ -13,7 +13,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
+# build # need this for module build files
 develop-eggs/
 dist/
 downloads/
