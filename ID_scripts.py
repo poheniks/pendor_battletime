@@ -783,7 +783,9 @@ script_coop_copy_file_to_parties_mp = 781
 script_coop_copy_parties_to_file_mp = 782
 script_coop_copy_file_to_parties_sp = 783
 script_coop_copy_register_to_hero_xp = 784
-script_coop_copy_hero_to_file = 785
-script_coop_copy_file_to_hero = 786
+script_pendor_copy_troop_to_file = 785
+script_pendor_copy_file_to_troops = 786
+script_coop_copy_hero_to_file = 787
+script_coop_copy_file_to_hero = 788
 
 
