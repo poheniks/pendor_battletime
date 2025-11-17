@@ -44,20 +44,20 @@ pt_merc_vanskerry Vanskerry_Leiesoldat 2251799813685271 0 2 137 225 4 8 0 73 100
 pt_merc_veccavian Daughters_of_Persinoe 2251799813685263 0 31 137 289 4 8 0 288 20 40 0 287 20 50 0 286 20 50 0 285 50 100 0 284 50 100 0 
 pt_merc_singalian Singalian_Sellsword_Company 2251799813685276 0 40 137 299 10 50 0 298 50 100 0 67 50 100 0 -1 -1 -1 
 pt_slaver_singalian Singalian_Slavers 2251799813685276 0 40 137 299 3 6 0 298 5 30 0 67 10 50 0 -1 -1 -1 
-pt_player_merc_mettenheim The_Freybrueder 2251799813685262 0 30 509 1179 1 1 0 283 3 8 0 282 5 10 0 281 10 20 0 411 25 50 0 279 40 70 0 
+pt_player_merc_mettenheim The_Freybrueder 2251799813685262 0 30 509 1192 1 1 0 283 3 8 0 282 5 10 0 281 10 20 0 411 25 50 0 279 40 70 0 
 pt_player_merc_mettenheim_2 The_Freybrueder_part_2 2251799813685262 0 30 509 278 25 50 0 -1 -1 -1 -1 -1 
-pt_player_merc_veccavian The_Veccavian_Renegades 2251799813685263 0 31 509 1180 1 1 0 412 20 35 0 287 30 50 0 286 30 60 0 285 20 40 0 284 20 40 0 
-pt_player_merc_barclay Primera_Guardia_Real 2251799813685270 0 28 509 1181 1 1 0 297 10 15 0 296 20 35 0 295 20 40 0 293 30 60 0 294 20 40 0 
-pt_player_merc_melitine The_Sarno_Expedition 2251799813685269 0 32 509 1182 1 1 0 415 15 25 0 416 15 30 0 417 10 20 0 413 30 60 0 414 30 60 0 
-pt_player_merc_marleons 1st_Banneret_of_Marleons 2251799813685260 0 15 509 1183 1 1 0 96 100 200 0 -1 -1 -1 -1 
-pt_player_merc_unicorns Sir_Timothy's_Knights 2251799813685260 0 1 509 1184 1 1 0 406 80 160 0 235 20 30 0 238 20 30 0 -1 -1 
-pt_player_merc_red_brotherhood Lothario's_Brotherhood 2251799813685279 0 38 509 1185 1 1 0 205 80 160 0 204 60 120 0 217 50 100 0 273 40 80 0 181 0 12 0 
+pt_player_merc_veccavian The_Veccavian_Renegades 2251799813685263 0 31 509 1193 1 1 0 412 20 35 0 287 30 50 0 286 30 60 0 285 20 40 0 284 20 40 0 
+pt_player_merc_barclay Primera_Guardia_Real 2251799813685270 0 28 509 1194 1 1 0 297 10 15 0 296 20 35 0 295 20 40 0 293 30 60 0 294 20 40 0 
+pt_player_merc_melitine The_Sarno_Expedition 2251799813685269 0 32 509 1195 1 1 0 415 15 25 0 416 15 30 0 417 10 20 0 413 30 60 0 414 30 60 0 
+pt_player_merc_marleons 1st_Banneret_of_Marleons 2251799813685260 0 15 509 1196 1 1 0 96 100 200 0 -1 -1 -1 -1 
+pt_player_merc_unicorns Sir_Timothy's_Knights 2251799813685260 0 1 509 1197 1 1 0 406 80 160 0 235 20 30 0 238 20 30 0 -1 -1 
+pt_player_merc_red_brotherhood Lothario's_Brotherhood 2251799813685279 0 38 509 1198 1 1 0 205 80 160 0 204 60 120 0 217 50 100 0 273 40 80 0 181 0 12 0 
 pt_player_merc_red_brotherhood_2 Lothario's_Brotherhood_part_2 2251799813685279 0 38 509 160 0 12 0 119 0 12 0 100 0 12 0 139 0 12 0 147 0 6 1 -1 
-pt_player_merc_snowlions The_Snowlion_Brigade 2251799813685259 0 1 509 1186 1 1 0 407 20 50 0 408 30 50 0 410 40 70 0 409 30 60 0 -1 
-pt_player_merc_singalians Firuz_and_his_Singalian_Slavers 2251799813685275 0 40 509 1187 1 1 0 299 50 100 0 298 80 150 0 67 80 160 0 -1 -1 
-pt_player_merc_jatu Chosen_of_Indar 2251799813685254 0 37 509 1188 1 1 0 270 20 40 0 269 40 80 0 268 50 100 0 74 50 100 0 -1 
-pt_player_merc_generic The_Free_Company 2251799813685259 0 34 509 1189 1 1 0 65 15 30 0 60 15 30 0 63 20 40 0 64 30 60 0 58 40 80 0 
-pt_player_merc_cheaters Andy's_Freeloading_Cheaters 2251799813685259 0 2 312 1190 1 1 0 215 10 20 0 55 20 40 0 -1 -1 -1 
+pt_player_merc_snowlions The_Snowlion_Brigade 2251799813685259 0 1 509 1199 1 1 0 407 20 50 0 408 30 50 0 410 40 70 0 409 30 60 0 -1 
+pt_player_merc_singalians Firuz_and_his_Singalian_Slavers 2251799813685275 0 40 509 1200 1 1 0 299 50 100 0 298 80 150 0 67 80 160 0 -1 -1 
+pt_player_merc_jatu Chosen_of_Indar 2251799813685254 0 37 509 1201 1 1 0 270 20 40 0 269 40 80 0 268 50 100 0 74 50 100 0 -1 
+pt_player_merc_generic The_Free_Company 2251799813685259 0 34 509 1202 1 1 0 65 15 30 0 60 15 30 0 63 20 40 0 64 30 60 0 58 40 80 0 
+pt_player_merc_cheaters Andy's_Freeloading_Cheaters 2251799813685259 0 2 312 1203 1 1 0 215 10 20 0 55 20 40 0 -1 -1 -1 
 pt_stronghold_patrol Order_Stronghold_Patrol 1407374887747630 0 1 509 -1 -1 -1 -1 -1 -1 
 pt_ren_knights Renegade_Knights 11258999068426245 0 35 509 -1 -1 -1 -1 -1 -1 
 pt_cb5_results Fleeing_Enemies 11258999068426274 0 35 312 -1 -1 -1 -1 -1 -1 
@@ -98,9 +98,9 @@ pt_troublesome_bandits Troublesome_Bandits 2533274790658053 0 2 312 260 0 8 0 25
 pt_bandits_awaiting_ransom Bandits_Awaiting_Ransom 2533274790789125 0 3 312 260 2 12 0 259 6 15 0 217 10 25 0 215 15 35 0 372 1 1 1 -1 
 pt_kidnapped_girl Kidnapped_Girl 262180 0 3 7 372 1 1 0 -1 -1 -1 -1 -1 
 pt_village_farmers Village_Farmers 26 0 4 7 55 5 10 0 231 0 3 0 208 0 3 0 207 1 5 0 236 3 8 0 -1 
-pt_spy_partners Unremarkable_Travellers 2814749767434274 0 3 7 1079 1 1 0 -1 -1 -1 -1 -1 
+pt_spy_partners Unremarkable_Travellers 2814749767434274 0 3 7 1092 1 1 0 -1 -1 -1 -1 -1 
 pt_runaway_serfs Runaway_Serfs 2251799814012954 0 3 7 55 6 7 0 236 3 3 0 -1 -1 -1 -1 
-pt_spy Ordinary_Townsman 1125899907170338 0 3 7 1078 1 1 0 -1 -1 -1 -1 -1 
+pt_spy Ordinary_Townsman 1125899907170338 0 3 7 1091 1 1 0 -1 -1 -1 -1 -1 
 pt_sacrificed_messenger Sacrificed_Messenger 844424930459682 0 3 7 -1 -1 -1 -1 -1 -1 
 pt_jatu_quest_army Marauding_Jatu_Army 5629499534475271 0 3 312 271 1 12 0 270 10 30 0 269 30 60 0 268 100 200 0 262 1 3 1 -1 
 pt_forager_party Foraging_Party 1407374887747618 0 1 7 -1 -1 -1 -1 -1 -1 
