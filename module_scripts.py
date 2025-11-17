@@ -31313,7 +31313,7 @@ scripts = [
     (troop_set_slot, "trp_npc_poheniks", 66, 1),
     (troop_set_slot, "trp_npc_poheniks", 71, "trp_npc_kassim"),
     (troop_set_slot, "trp_npc_poheniks", 73, "trp_npc_ediz"),
-    (troop_set_slot, "trp_npc_poheniks", 75, "trp_npc_sara"),
+    (troop_set_slot, "trp_npc_poheniks", 75, "trp_npc_ansen"),
     (troop_set_slot, "trp_npc_poheniks", 60, "p_town_3"),
     (troop_set_slot, "trp_npc_poheniks", 141, 69),
     (troop_set_slot, "trp_npc_poheniks", 143, 4),
