@@ -1,7 +1,8 @@
 # pendor-specific
 #ID_* #we need these because of an import loop between items & constants
 
-
+#ignore any local backups
+*backup* 
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -1,4 +1,4 @@
-3268
+3285
 qstr_Next_Page Next_Page
 qstr_Co_op_Admin_Panel Co-op_Admin_Panel
 qstr_Game_Rules:^ Game_Rules:^
@@ -1721,6 +1721,7 @@ qstr_p_ally{reg20}_{reg21 p_ally{reg20}_{reg21}_cls
 qstr_p_ally{reg20}_{reg21} p_ally{reg20}_{reg21}_trp
 qstr_p_ally{reg20}_{reg21}_ p_ally{reg20}_{reg21}_num
 qstr_hero_num hero_num
+qstr_troops_num troops_num
 qstr_Battle_setup_complet Battle_setup_complete.
 qstr_p_ally0_{reg21}_cls p_ally0_{reg21}_cls
 qstr_battle_result battle_result
@@ -1735,6 +1736,22 @@ qstr_p_ally{reg20}_{reg21}_w p_ally{reg20}_{reg21}_wnd
 qstr_p_ally0_numstacks p_ally0_numstacks
 qstr_p_ally0_{reg21}_trp p_ally0_{reg21}_trp
 qstr_p_ally0_{reg21}_stk_ p_ally0_{reg21}_stk_xp
+qstr_pendor_trp{reg24}_id pendor_trp{reg24}_id
+qstr_pendor_trp{reg24}_na pendor_trp{reg24}_name
+qstr_pendor_trp{reg24}_st pendor_trp{reg24}_str
+qstr_pendor_trp{reg24}_ag pendor_trp{reg24}_agi
+qstr_pendor_trp{reg24}_sk pendor_trp{reg24}_skl{reg31}
+qstr_pendor_trp{reg24}_wp pendor_trp{reg24}_wp{reg31}
+qstr_pendor_trp{reg24}_it pendor_trp{reg24}_itm{reg30}
+qstr_pendor_trp{reg24}_im pendor_trp{reg24}_imd{reg30}
+qstr_pendor_trp{reg25}_id pendor_trp{reg25}_id
+qstr_pendor_trp{reg25}_na pendor_trp{reg25}_name
+qstr_pendor_trp{reg25}_st pendor_trp{reg25}_str
+qstr_pendor_trp{reg25}_ag pendor_trp{reg25}_agi
+qstr_pendor_trp{reg25}_sk pendor_trp{reg25}_skl{reg31}
+qstr_pendor_trp{reg25}_wp pendor_trp{reg25}_wp{reg31}
+qstr_pendor_trp{reg25}_it pendor_trp{reg25}_itm{reg30}
+qstr_pendor_trp{reg25}_im pendor_trp{reg25}_imd{reg30}
 qstr_hero_{reg21}_trp hero_{reg21}_trp
 qstr_hero_{reg21}_name hero_{reg21}_name
 qstr_hero_{reg21}_xp hero_{reg21}_xp

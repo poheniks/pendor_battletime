@@ -2819,6 +2819,7 @@ coop_scripts = [
 #ADD ENEMY PARTIES
 
     (assign, reg22, 0), #count heroes
+    (assign, reg24, 0), #count unique troop IDs  
 
     (party_get_num_attached_parties, ":no_enemy_parties", "$coop_encountered_party"),
     (val_add, ":no_enemy_parties", 1), 
@@ -2887,6 +2888,11 @@ coop_scripts = [
         (try_end),
         (dict_set_int, "$coop_dict", "@p_enemy{reg20}_{reg21}_trp", ":stack_troop"),
         (dict_set_int, "$coop_dict", "@p_enemy{reg20}_{reg21}_num", ":stack_size"),
+
+        #PENDOR copy troop into dict here
+        (assign, reg23, ":stack_troop"),
+        (call_script, "script_pendor_copy_troop_to_file"),
+
       (try_end),
     (try_end),
 
@@ -2994,18 +3000,24 @@ coop_scripts = [
         (try_end),
         (dict_set_int, "$coop_dict", "@p_ally{reg20}_{reg21}_trp", ":stack_troop"),
         (dict_set_int, "$coop_dict", "@p_ally{reg20}_{reg21}_num", ":stack_size"),
+        
+        #PENDOR copy troop into dict here
+        (assign, reg23, ":stack_troop"),
+        (call_script, "script_pendor_copy_troop_to_file"),
+      
       (try_end),
     (try_end),
 
     (dict_set_int, "$coop_dict", "@hero_num", reg22),
+    #PENDOR custom
+    (dict_set_int, "$coop_dict", "@troops_num", reg24),
 
     (call_script, "script_coop_copy_hero_to_file"), 
-
-
 
     (dict_save, "$coop_dict", "@coop_battle"), #save new data
     (dict_free, "$coop_dict"),
     (display_message, "@Battle setup complete."),
+
     (try_end),
 
     ]),	
@@ -3028,7 +3040,10 @@ coop_scripts = [
   #BOTH MODES
       (call_script, "script_coop_copy_file_to_settings"),	#copy game settings here
       (call_script, "script_coop_copy_file_to_hero"),
-
+      
+      #PENDOR custom
+      (call_script, "script_pendor_copy_file_to_troops"),
+    
   #CLEAR casualty parties
       (try_for_range, ":party_rank", 0, "$coop_no_enemy_parties"),
         (store_add, ":party_no", ":party_rank", coop_temp_casualties_enemy_begin), 
@@ -3409,6 +3424,103 @@ coop_scripts = [
 
 
     ]),	 
+
+# PENDOR custom
+# Set troop skills & equipment to dict
+# script_pendor_copy_troop_to_files
+# Input: reg23 (troop)
+# Output: adds troop stats and equipment to $coop_dict. Add troop index count to reg24
+  ("pendor_copy_troop_to_file", [
+    (try_begin),
+     (neg|is_vanilla_warband),
+     (neg|troop_is_hero, reg23),  
+     
+     (neg|dict_has_key, "$coop_dict", "@pendor_trp{reg24}_id"),
+     (dict_set_int, "$coop_dict", "@pendor_trp{reg24}_id", reg23),
+
+     (str_store_troop_name, s0, reg23),
+     (dict_set_str, "$coop_dict", "@pendor_trp{reg24}_name", s0),
+     
+     #add attributes
+     (store_attribute_level, ":strength", reg23, ca_strength),
+     (store_attribute_level, ":agility", reg23, ca_agility),
+     (dict_set_int, "$coop_dict", "@pendor_trp{reg24}_str", ":strength"),
+     (dict_set_int, "$coop_dict", "@pendor_trp{reg24}_agi", ":agility"),
+     
+     #add skills
+     (try_for_range, reg31, "skl_horse_archery", "skl_reserved_14"),
+      (neg|is_between, reg31, "skl_reserved_9", "skl_power_draw"),
+      (store_skill_level, ":skill", reg31, reg23),
+      (dict_set_int, "$coop_dict", "@pendor_trp{reg24}_skl{reg31}", ":skill"),
+     (try_end),
+
+     #add proficiencies
+     (try_for_range, reg31, wpt_one_handed_weapon, 7),
+      (store_proficiency_level, ":prof", reg23, reg31),
+      (dict_set_int, "$coop_dict", "@pendor_trp{reg24}_wp{reg31}", ":prof"),
+     (try_end),
+
+     #add equipment
+     (try_for_range, reg30, ek_item_0, ek_food),
+      (troop_get_inventory_slot, ":item", reg23, reg30),
+      (troop_get_inventory_slot_modifier, ":item_mod", reg23, reg30),
+      (dict_set_int, "$coop_dict", "@pendor_trp{reg24}_itm{reg30}", ":item"),
+      (dict_set_int, "$coop_dict", "@pendor_trp{reg24}_imd{reg30}", ":item_mod"),
+     (try_end),
+ 
+     (val_add, reg24, 1), #add to total unique troop count
+
+    (try_end),
+  ]),
+
+# PENDOR custom
+# Set troop skills & equipment from dict
+# script_pendor_copy_file_to_troops
+# Input: none
+# Output: sets troop stats and equipment from $coop_dict
+  ("pendor_copy_file_to_troops", [
+    (try_begin),
+     (neg|is_vanilla_warband),
+     (game_in_multiplayer_mode),
+     
+     (dict_get_int, ":number_troops", "$coop_dict", "@troops_num"),
+     (try_for_range, reg25, 0, ":number_troops"),
+      (dict_get_int, ":cur_troop_id", "$coop_dict", "@pendor_trp{reg25}_id"),
+      
+      (dict_get_str, s0, "$coop_dict", "@pendor_trp{reg25}_name"),
+      (troop_set_name, ":cur_troop_id", s0),
+      
+      #set attributes
+      (dict_get_int, ":strength", "$coop_dict", "@pendor_trp{reg25}_str"),
+      (dict_get_int, ":agility", "$coop_dict", "@pendor_trp{reg25}_agi"),
+      (troop_set_attribute, ":cur_troop_id", ca_strength, ":strength"),
+      (troop_set_attribute, ":cur_troop_id", ca_agility, ":agility"),
+     
+      #set skills
+      (try_for_range, reg31, "skl_horse_archery", "skl_reserved_14"),
+       (dict_get_int, ":skill", "$coop_dict", "@pendor_trp{reg25}_skl{reg31}"),
+       (troop_set_skill, ":cur_troop_id", reg31, ":skill"), 
+      (try_end),
+ 
+      #set proficiencies
+      (try_for_range, reg31, wpt_one_handed_weapon, 7),
+       (dict_get_int, ":prof", "$coop_dict", "@pendor_trp{reg25}_wp{reg31}"),
+       (troop_set_proficiency, ":cur_troop_id", reg31, ":prof"),
+      (try_end),
+
+      #set equipment
+      (try_for_range, reg30, ek_item_0, ek_food),
+       (dict_get_int, ":item", "$coop_dict", "@pendor_trp{reg25}_itm{reg30}"),
+       (dict_get_int, ":item_mod", "$coop_dict", "@pendor_trp{reg25}_imd{reg30}"),
+       (troop_set_inventory_slot, ":cur_troop_id", reg30, ":item"),
+       (troop_set_inventory_slot_modifier, ":cur_troop_id", reg30, ":item_mod"),
+      (try_end),
+      
+     (try_end),
+            
+    (try_end),
+  ]),
+
 
 
 
