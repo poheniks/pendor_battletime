@@ -582,8 +582,8 @@ items = [
   ["griffon_captain_armor","Griffon_Captain_Armor", [("pa_pop_armor_31", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,8513, weight(26)|abundance(1)|head_armor(1)|body_armor(57)|leg_armor(18)|difficulty(18), imodbits_armor|imodbit_cracked|imodbit_old, []],
   ["griffon_captain_armor_cape_black","Griffon_Captain_Armor_with_Black_Cape", [("pa_pop_armor_31_cape_black", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,8513, weight(26)|abundance(1)|head_armor(1)|body_armor(57)|leg_armor(18)|difficulty(18), imodbits_armor|imodbit_cracked|imodbit_old, []],
   ["griffon_captain_armor_cape_white","Griffon_Captain_Armor_with_White_Cape", [("pa_pop_armor_31_cape_white", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,8513, weight(26)|abundance(1)|head_armor(1)|body_armor(57)|leg_armor(18)|difficulty(18), imodbits_armor|imodbit_cracked|imodbit_old, []],
-  ["griffon_grandmaster_armor","Griffon_Grandmaster_Armor", [("pa_pop_armor_30", 0)], itp_type_body_armor|itp_unique|itp_covers_legs|itp_doesnt_cover_hair, 0,13019, weight(27)|abundance(1)|head_armor(1)|body_armor(62)|leg_armor(22)|difficulty(24), imodbits_armor|imodbit_cracked|imodbit_old, []],
-  ["griffon_grandmaster_armor_cape","Griffon_Grandmaster_Armor_with_Cape", [("pa_pop_armor_30_cape", 0)], itp_type_body_armor|itp_unique|itp_covers_legs|itp_doesnt_cover_hair, 0,13019, weight(27)|abundance(1)|head_armor(1)|body_armor(62)|leg_armor(22)|difficulty(24), imodbits_armor|imodbit_cracked|imodbit_old, []],
+  ["griffon_grandmaster_armor","Griffon_Grandmaster_Armor", [("pa_pop_armor_30", 0)], itp_type_body_armor|itp_unique|itp_covers_legs|itp_doesnt_cover_hair, 0,13019, weight(20)|abundance(1)|head_armor(3)|body_armor(67)|leg_armor(26)|difficulty(24), imodbits_armor|imodbit_cracked|imodbit_old, []],
+  ["griffon_grandmaster_armor_cape","Griffon_Grandmaster_Armor_with_Cape", [("pa_pop_armor_30_cape", 0)], itp_type_body_armor|itp_unique|itp_covers_legs|itp_doesnt_cover_hair, 0,13019, weight(20)|abundance(1)|head_armor(3)|body_armor(67)|leg_armor(26)|difficulty(24), imodbits_armor|imodbit_cracked|imodbit_old, []],
   ["platemail_kraken","Kraken_Platemail_with_Surcoat", [("pa_pop_armor_32", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,10816, weight(25)|abundance(1)|head_armor(2)|body_armor(58)|leg_armor(19)|difficulty(21), imodbits_armor|imodbit_old|imodbit_superb, []],
   ["platemail_26_kraken","Kraken_Platemail", [("pa_pop_armor_26_kraken", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,10516, weight(25)|abundance(1)|head_armor(2)|body_armor(58)|leg_armor(19)|difficulty(21), imodbits_armor|imodbit_old|imodbit_superb, []],
   ["platemail_26_red","Red_Platemail", [("pa_pop_armor_26_red", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,8316, weight(25)|abundance(1)|body_armor(57)|leg_armor(21)|difficulty(21), imodbits_armor|imodbit_old|imodbit_superb, []],
@@ -1271,6 +1271,15 @@ items = [
       (particle_system_burst, "psys_pistol_smoke", pos1, 15),
     ]),
    ]],
+   ["handgonne","Handgonne", [("pishal", 0)], itp_type_musket|itp_cant_reload_on_horseback|itp_two_handed|itp_primary|itp_cant_use_on_horseback|itp_ignore_gravity|itp_cant_reload_while_moving_mounted, itcf_shoot_musket|itcf_carry_crossbow_back|itcf_reload_musket,8000, weight(2.5)|abundance(1)|accuracy(73)|spd_rtng(35)|shoot_speed(400)|max_ammo(1)|thrust_damage(180, pierce), imodbits_crossbow|imodbit_fine, [
+    (ti_on_weapon_attack, [
+      (play_sound, "snd_pistol_shot"),
+      (position_move_x, pos1, 0),
+      (position_move_y, pos1, 101),
+      (position_rotate_z, pos1, 45),
+      (particle_system_burst, "psys_pistol_smoke", pos1, 15),
+    ]),
+   ]],
    ["matchlock","Musket", [("matchlock_1", 0)], itp_type_musket|itp_cant_reload_on_horseback|itp_two_handed|itp_primary|itp_cant_use_on_horseback|itp_ignore_gravity|itp_cant_reload_while_moving_mounted, itcf_shoot_musket|itcf_carry_crossbow_back|itcf_reload_musket,8000, weight(3.5)|abundance(1)|accuracy(94)|spd_rtng(30)|shoot_speed(320)|max_ammo(1)|thrust_damage(120, pierce), imodbits_crossbow|imodbit_fine, [
     (ti_on_weapon_attack, [
       (play_sound, "snd_pistol_shot"),
@@ -1280,6 +1289,52 @@ items = [
       (particle_system_burst, "psys_pistol_smoke", pos1, 15),
     ]),
    ]],
+   ["pistol","Flintlock_Pistol", [("fl_pistol", 0)], itp_type_pistol|itp_primary|itp_ignore_gravity, itcf_shoot_pistol|itcf_reload_pistol,8000, weight(1.5)|abundance(1)|accuracy(89)|spd_rtng(48)|shoot_speed(130)|max_ammo(1)|thrust_damage(59, pierce), imodbits_crossbow|imodbit_fine, [
+    (ti_on_weapon_attack, [
+      (play_sound, "snd_pistol_shot"),
+      (position_move_x, pos1, 27),
+      (position_move_y, pos1, 36),
+      (particle_system_burst, "psys_pistol_smoke", pos1, 15),
+    ]),
+   ]],
+   ["blunderbus","Blunderbus", [("handgonne_chis_d", 0)], itp_type_musket|itp_cant_reload_on_horseback|itp_two_handed|itp_primary|itp_cant_use_on_horseback|itp_ignore_gravity|itp_cant_reload_while_moving_mounted, itcf_shoot_musket|itcf_carry_crossbow_back|itcf_reload_musket,8000, weight(5.5)|abundance(1)|accuracy(88)|spd_rtng(45)|shoot_speed(150)|max_ammo(1)|thrust_damage(50, pierce), imodbits_crossbow|imodbit_fine, [
+    (ti_on_weapon_attack,[
+    (store_trigger_param_1,reg1),#Get the attacker Agent for add_missile
+    (try_for_range, ":unused", 1, 6),
+        (copy_position, pos2, pos1),
+        
+        #Shotgun script
+        #Rifle Version
+
+        #Kludge code to fix the final angles and arrive at a satisfactory result.
+        #The engine doesn't appear to use Euler angles to give perfect precision...
+        #Under all circumstances, so this will be off a bit if firing way up or down.	
+        (set_fixed_point_multiplier, 100),
+        (assign, ":x_fix", -350),#-3.5 degrees
+        (assign, ":z_fix", 570),#5.7 degrees
+        #The following line is our "choke" adjustment on the Z axis.
+        #Unless you need a fan pattern, You'll want to keep the change...
+        #The same for X and Z, but Z needs to be applied through the special fix below.
+        (store_random_in_range, ":z_offset", -200, 201),#2 deg. of random rotation on the Z axis
+        (val_add, ":z_fix", ":z_offset"),#Add offset to the Z fix
+        #Fix for Z axis, using floating-point adjustment of the quaternian
+        #Don't mess with the next three lines...
+        #Unless you really know what's going on with the math :-)
+        (position_rotate_x_floating, pos2, 9000), # change axis by rotating 90 degrees
+        (position_rotate_y_floating, pos2, ":z_fix"), # rotate z floating
+        (position_rotate_x_floating, pos2, -9000), # change axis back
+        #Choke adjustment for the X axis.  
+        #Should match the choke adjustment for the Z in most cases.
+        (store_random_in_range, ":x_offset", -200, 201),#2 deg. of random rotation on the X axis
+        (val_add, ":x_fix", ":x_offset"),#Add offset to the X fix
+        (position_rotate_x_floating, pos2, ":x_fix"), # Final adjustment of X
+        
+        (add_missile, reg1, pos2, 8000, "itm_blunderbus", 0, "itm_bullets_1", 0),
+    (try_end),
+    (play_sound,"snd_pistol_shot"),#Firing sound
+    (position_move_y,pos1,95),#Move out along Y
+    (particle_system_burst,"psys_pistol_smoke",pos1,15),#Smoke
+    ]),]],
   ["practice_arrows_2","Practice_Arrows", [("arena_arrow", 0),("flying_missile", ixmesh_flying_ammo),("quiver", ixmesh_carry),("quiver", ixmesh_inventory)], itp_type_arrows, itcf_carry_quiver_back,0, weight(1.5)|abundance(100)|weapon_length(95)|max_ammo(80), imodbits_missile, []],
   ["arrows","Arrows", [("arrow", 0),("flying_missile", ixmesh_flying_ammo),("quiver", ixmesh_carry),("quiver", ixmesh_inventory)], itp_type_arrows|itp_default_ammo|itp_merchandise, itcf_carry_quiver_back,160, weight(3)|abundance(100)|weapon_length(95)|max_ammo(40)|thrust_damage(1, pierce), imodbits_missile, []],
   ["barbed_arrows","Barbed_Arrows", [("barbed_arrow", 0),("flying_missile", ixmesh_flying_ammo),("quiver_d", ixmesh_carry),("quiver_d", ixmesh_inventory)], itp_type_arrows|itp_merchandise, itcf_carry_quiver_back_right,170, weight(3)|abundance(70)|weapon_length(92)|max_ammo(38)|thrust_damage(2, pierce), imodbits_missile, []],
@@ -1884,17 +1939,54 @@ items = [
   ["ivory_helmet","Ivory_Helmet", [("ivory_helm", 0)], itp_type_head_armor|itp_merchandise, 0,6005, weight(2)|abundance(3)|head_armor(59)|difficulty(9), imodbits_armor|imodbit_cracked|imodbit_old, []],
   ["ivory_helmet_mask","Ivory_Masked_Helmet", [("ivory_helm_mask", 0)], itp_type_head_armor|itp_merchandise, 0,6005, weight(2.25)|abundance(3)|head_armor(60)|body_armor(1)|difficulty(12), imodbits_armor|imodbit_cracked|imodbit_old, []],
   ["ranger_hood","Ranger Hood", [("drow_helmet3", 0)], itp_type_head_armor|itp_merchandise, 0,6005, weight(0.4)|abundance(3)|head_armor(24)|body_armor(3)|difficulty(6), imodbits_armor|imodbit_cracked|imodbit_old, []],
+  ["chunk_helmet1","Chunk_Helmet", [("inv_chapel-de-fer_mail1", 0)], itp_type_head_armor|itp_merchandise, 0,6005, weight(3)|abundance(3)|head_armor(40)|difficulty(12), imodbits_armor|imodbit_cracked|imodbit_old, []],
+  ["chunk_helmet2","Chunk_Helmet", [("inv_chapel-de-fer_mail2", 0)], itp_type_head_armor|itp_merchandise, 0,6005, weight(3)|abundance(3)|head_armor(40)|difficulty(12), imodbits_armor|imodbit_cracked|imodbit_old, []],
+  ["chunk_helmet3","Chunk_Helmet", [("inv_chapel-de-fer_mail3", 0)], itp_type_head_armor|itp_merchandise, 0,6005, weight(3)|abundance(3)|head_armor(40)|difficulty(12), imodbits_armor|imodbit_cracked|imodbit_old, []],
+  ["chunk_helmet4","Chunk_Helmet", [("inv_chapel-de-fer_cloth1", 0)], itp_type_head_armor|itp_merchandise, 0,6005, weight(3)|abundance(3)|head_armor(40)|difficulty(12), imodbits_armor|imodbit_cracked|imodbit_old, []],
+  ["chunk_helmet5","Chunk_Helmet", [("inv_chapel-de-fer_cloth2", 0)], itp_type_head_armor|itp_merchandise, 0,6005, weight(3)|abundance(3)|head_armor(40)|difficulty(12), imodbits_armor|imodbit_cracked|imodbit_old, []],
+  ["chunk_helmet6","Chunk_Helmet", [("inv_chapel-de-fer_cloth3", 0)], itp_type_head_armor|itp_merchandise, 0,6005, weight(3)|abundance(3)|head_armor(40)|difficulty(12), imodbits_armor|imodbit_cracked|imodbit_old, []],
+  ["chonk_helmet","Chonk_Knight_Helmet", [("hm_hlf_s01Y", 0)], itp_type_head_armor|itp_merchandise|itp_covers_head, 0,1155, weight(7.5)|abundance(100)|head_armor(68)|body_armor(4)|difficulty(20), imodbits_armor|imodbit_cracked|imodbit_old, []],
+  ["pistolier_helmet","Handgonne_Helmet", [("helmet_Pistolier_A_01", 0)], itp_type_head_armor|itp_merchandise, 0,6005, weight(3)|abundance(3)|head_armor(61)|body_armor(3)|difficulty(9), imodbits_armor|imodbit_cracked|imodbit_old, []],
+  ["recent_helmet","Chinese_Helmet", [("elgante_armored", 0)], itp_type_head_armor|itp_merchandise, 0,6005, weight(3)|abundance(3)|head_armor(62)|body_armor(3)|difficulty(9), imodbits_armor|imodbit_cracked|imodbit_old, []],
+  ["exotic_helmet","Exotic_Helmet", [("helm19", 0)], itp_type_head_armor|itp_merchandise|itp_covers_head, 0,6005, weight(3)|abundance(3)|head_armor(60)|body_armor(3)|difficulty(9), imodbits_armor|imodbit_cracked|imodbit_old, []],
+  ["exotic_plumed_helmet","Exotic_plumed_Helmet", [("helm20", 0)], itp_type_head_armor|itp_merchandise|itp_covers_head, 0,6005, weight(3.5)|abundance(3)|head_armor(64)|body_armor(4)|difficulty(15), imodbits_armor|imodbit_cracked|imodbit_old, []],
+  ["super_plumed_helmet","Super_Exotic_plumed_Helmet", [("armet_b", 0)], itp_type_head_armor|itp_merchandise|itp_covers_head, 0,6005, weight(3)|abundance(3)|head_armor(65)|body_armor(4)|difficulty(15), imodbits_armor|imodbit_cracked|imodbit_old, []],
+  ["maid_helm","Maid_Helmet", [("maid_helm", 0)], itp_type_head_armor|itp_merchandise, 0,6005, weight(1)|abundance(3)|head_armor(55)|body_armor(4)|difficulty(9), imodbits_armor|imodbit_cracked|imodbit_old, []],
+  ["skaoi_helmet","Skaoi_Helmet", [("skaoi_helmet", 0)], itp_type_head_armor|itp_merchandise, 0,6005, weight(0.5)|abundance(3)|head_armor(63)|body_armor(5)|difficulty(9), imodbits_armor|imodbit_cracked|imodbit_old, []],
+  ["skaoi_helmet_2","Skaoi_Helmet", [("skaoi_helmet_2", 0)], itp_type_head_armor|itp_merchandise, 0,6005, weight(0.5)|abundance(3)|head_armor(63)|body_armor(5)|difficulty(9), imodbits_armor|imodbit_cracked|imodbit_old, []],
+  ["valk_helmet","Valkyrie_Helmet", [("valk_helmet", 0)], itp_type_head_armor|itp_merchandise, 0,6005, weight(4)|abundance(3)|head_armor(65)|body_armor(8)|difficulty(20), imodbits_armor|imodbit_cracked|imodbit_old, []],
   ["ivory_armour","Ivory_Plate", [("ivory_armour", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(15)|abundance(5)|head_armor(1)|body_armor(59)|leg_armor(18)|difficulty(15), imodbits_armor|imodbit_old|imodbit_superb, []],
   ["ivory_armour_knight","Ivory_Knight_Plate", [("ivory_armour_knight", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(16)|abundance(5)|head_armor(2)|body_armor(62)|leg_armor(20)|difficulty(20), imodbits_armor|imodbit_old|imodbit_superb, []],
   ["ivory_armour_lord","Ivory_Lord_Plate", [("ivory_armour_lord", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(11)|abundance(5)|head_armor(3)|body_armor(65)|leg_armor(23)|difficulty(25), imodbits_armor|imodbit_old|imodbit_superb, []],
   ["ranger_armour","Ranger_Armour", [("gondor_faramir", 0)], itp_type_body_armor|itp_covers_legs|itp_doesnt_cover_hair|itp_civilian, 0,1505, weight(5)|abundance(6)|head_armor(1)|body_armor(36)|leg_armor(19)|difficulty(10), imodbits_cloth|imodbit_rough|imodbit_superb, []],
+  ["chunk_armour","Chunk_Plate_armour", [("zhongjia_1", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(41)|abundance(5)|head_armor(4)|body_armor(60)|leg_armor(25)|difficulty(18), imodbits_armor|imodbit_old|imodbit_superb, []],
+  ["chonk_armour","Chonk_Plate_armour", [("hm_arm_masW", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(39)|abundance(5)|head_armor(5)|body_armor(69)|leg_armor(29)|difficulty(21), imodbits_armor|imodbit_old|imodbit_superb, []],
+  ["tsy_armour","Tsy_Chonk_Plate_armour", [("hm_arm_masW", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(34)|abundance(5)|head_armor(6)|body_armor(72)|leg_armor(32)|difficulty(34), imodbits_armor|imodbit_old|imodbit_superb, []],
+  ["plume_armour","Exotic_Knight_Plate", [("maximilian_armour", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(22)|abundance(5)|head_armor(3)|body_armor(62)|leg_armor(22)|difficulty(15), imodbits_armor|imodbit_old|imodbit_superb, []],
+  ["tetsu_armour","Black_Exotic_Knight_Plate", [("maximilian_armour_1", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(13)|abundance(5)|head_armor(2)|body_armor(64)|leg_armor(24)|difficulty(21), imodbits_armor|imodbit_old|imodbit_superb, []],
+  ["handgonne_armour","Handgonne_Plate", [("cuirass_on_mail_chis", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(18)|abundance(5)|head_armor(2)|body_armor(60)|leg_armor(20)|difficulty(15), imodbits_armor|imodbit_old|imodbit_superb, []],
+  ["valk_armor","Valkyrie_Armour", [("valk_armor", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(10)|abundance(5)|head_armor(4)|body_armor(50)|leg_armor(20)|difficulty(15), imodbits_armor|imodbit_old|imodbit_superb, []],
+  ["skaoi_armor","Skaoi_Armour", [("skaoi_armor", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(3)|abundance(5)|head_armor(3)|body_armor(40)|leg_armor(15)|difficulty(12), imodbits_armor|imodbit_old|imodbit_superb, []],
+  ["maid_armor","Maid_Armour", [("maid_armor", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(4)|abundance(5)|head_armor(2)|body_armor(30)|leg_armor(15)|difficulty(8), imodbits_armor|imodbit_old|imodbit_superb, []],
   ["ivory_greaves","Ivory_Greaves", [("ivory_greaves", 0)], itp_type_foot_armor|itp_attach_armature|itp_civilian, 0,6557, weight(1)|abundance(1)|leg_armor(36)|difficulty(9), imodbits_cloth|imodbit_rough|imodbit_superb, []],
+  ["chunk_greaves","Chunk_Greaves", [("hm_boo_masU", 0)], itp_type_foot_armor|itp_attach_armature|itp_civilian, 0,6557, weight(5)|abundance(1)|leg_armor(39)|difficulty(13), imodbits_cloth|imodbit_rough|imodbit_superb, []],
+  ["chonk_greaves","Chonk_Knight_Greaves", [("hm_boo_masW", 0)], itp_type_foot_armor|itp_attach_armature|itp_civilian, 0,6557, weight(4.5)|abundance(1)|leg_armor(42)|difficulty(17), imodbits_cloth|imodbit_rough|imodbit_superb, []],
   ["ivory_gauntlets","Ivory_Gauntlets", [("ivory_gauntletsL", 0),("ivory_gauntletsL", imodbit_reinforced)], itp_type_hand_armor, 0,2116, weight(0.6)|abundance(1)|body_armor(9)|difficulty(18), imodbits_armor|imodbit_old|imodbit_superb, []],
+  ["chunk_gauntlets","Chunk_Gauntlets", [("ga_plate_mittens2_L", 0),("ga_plate_mittens2_L", imodbit_reinforced)], itp_type_hand_armor, 0,2116, weight(4)|abundance(1)|body_armor(9)|difficulty(12), imodbits_armor|imodbit_old|imodbit_superb, []],
+  ["chonk_gauntlets","Chonk_Knight_Gauntlets", [("hm_glv_masW_L", 0),("hm_glv_masW_L", imodbit_reinforced)], itp_type_hand_armor, 0,2116, weight(3)|abundance(1)|body_armor(12)|difficulty(18), imodbits_armor|imodbit_old|imodbit_superb, []],
   ["citadel_shield","Citadel_Shield", [("gondor_shield_vs2", 0)], itp_type_shield, itcf_carry_kite_shield,4101, weight(1.5)|abundance(1)|body_armor(22)|difficulty(6)|hit_points(800)|spd_rtng(100)|shield_height(97)|shield_width(40), imodbits_shield, []],
+  ["bigshield","Big_Shield", [("bigshield", 0)], itp_type_shield, itcf_carry_kite_shield,4101, weight(10)|abundance(1)|body_armor(30)|difficulty(7)|hit_points(2000)|spd_rtng(90)|shield_height(105)|shield_width(27), imodbits_shield, []],
+  ["buckler","Buckler", [("portuguese_buckler_a", 0)], itp_type_shield, itcf_carry_round_shield,2505, weight(1)|abundance(1)|body_armor(25)|difficulty(4)|hit_points(1500)|spd_rtng(100)|shield_width(19), imodbits_shield, []],
   ["dunedain_longsword","Dunedain_Longsword", [("anduril", 0)], itp_type_two_handed_wpn|itp_merchandise|itp_two_handed|itp_primary|itp_cant_use_on_horseback, itcf_carry_sword_back|itc_greatsword,3653, weight(1.2)|abundance(3)|difficulty(16)|hit_points(53248)|spd_rtng(110)|weapon_length(112)|thrust_damage(41, pierce)|swing_damage(49, cut), imodbits_sword|imodbit_fine|imodbit_exquisite|imodbit_masterwork, []],
+  ["ivorysword","Ivory Glory Sword", [("ivorysword", 0)], itp_type_two_handed_wpn|itp_merchandise|itp_two_handed|itp_primary|itp_cant_use_on_horseback, itcf_carry_sword_back|itc_greatsword,3653, weight(1.5)|abundance(3)|difficulty(21)|hit_points(53248)|spd_rtng(133)|weapon_length(147)|thrust_damage(48, pierce)|swing_damage(60, cut), imodbits_sword|imodbit_fine|imodbit_exquisite|imodbit_masterwork, []],
   ["dunedain_sword","Dunedain_Sword", [("Truth", 0),("Truth_scab", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itcf_carry_sword_left_hip|itc_longsword|itcf_show_holster_when_drawn,1211, weight(0.7)|abundance(5)|difficulty(12)|hit_points(38912)|spd_rtng(115)|weapon_length(94)|thrust_damage(34, pierce)|swing_damage(38, cut), imodbits_sword|imodbit_fine|imodbit_exquisite|imodbit_masterwork, []],
+  ["side_sword","Chinese_Sword", [("side_sword_yeah", 0)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itcf_carry_sword_left_hip|itc_longsword|itcf_show_holster_when_drawn,1211, weight(1.5)|abundance(5)|difficulty(12)|hit_points(38912)|spd_rtng(109)|weapon_length(105)|thrust_damage(39, pierce)|swing_damage(42, cut), imodbits_sword|imodbit_fine|imodbit_exquisite|imodbit_masterwork, []],
   ["gondor_spear","Gondor_Short_Spear", [("gondor_spear1", 0)], itp_type_polearm|itp_merchandise|itp_wooden_parry|itp_primary|itp_offset_lance|itp_no_blur, itcf_carry_spear|itc_spear|itcf_slashright_polearm|itcf_slashleft_polearm|itcf_overswing_spear|itcf_overswing_musket,247, weight(1)|abundance(100)|difficulty(12)|hit_points(12288)|spd_rtng(105)|weapon_length(180)|thrust_damage(40, pierce)|swing_damage(45, cut), imodbits_polearm|imodbit_fine, []],
   ["gondor_spear2","Gondor_Long_Spear", [("gondor_spear2", 0)], itp_type_polearm|itp_merchandise|itp_wooden_parry|itp_primary|itp_offset_lance|itp_no_blur, itcf_carry_spear|itc_spear|itcf_slashright_polearm|itcf_slashleft_polearm|itcf_overswing_spear|itcf_overswing_musket,247, weight(3)|abundance(100)|difficulty(14)|hit_points(12288)|spd_rtng(99)|weapon_length(200)|thrust_damage(41, pierce)|swing_damage(48, cut), imodbits_polearm|imodbit_fine, []],
   ["fountain_spear","Fountain_Spear", [("fountain_spear", 0)], itp_type_polearm|itp_merchandise|itp_wooden_parry|itp_primary|itp_offset_lance|itp_no_blur, itcf_carry_spear|itc_spear|itcf_slashright_polearm|itcf_slashleft_polearm|itcf_overswing_spear|itcf_overswing_musket,247, weight(2.5)|abundance(100)|difficulty(20)|hit_points(12288)|spd_rtng(104)|weapon_length(201)|thrust_damage(45, pierce)|swing_damage(50, cut), imodbits_polearm|imodbit_fine, []],
+  ["moonspear","Moon_Spear", [("moonspear", 0)], itp_type_polearm|itp_merchandise|itp_wooden_parry|itp_primary|itp_offset_lance|itp_no_blur, itcf_carry_spear|itc_spear|itcf_slashright_polearm|itcf_slashleft_polearm|itcf_overswing_spear|itcf_overswing_musket,247, weight(2.5)|abundance(100)|difficulty(20)|hit_points(12288)|spd_rtng(108)|weapon_length(198)|thrust_damage(50, pierce)|swing_damage(64, cut), imodbits_polearm|imodbit_fine, []],
+  ["savage_throwing","Savage_Pila", [("pilum100BClight", 0)], itp_type_thrown|itp_merchandise|itp_primary|itp_bonus_against_shield, itcf_throw_javelin|itcf_carry_spear,595, weight(8)|abundance(20)|difficulty(6)|spd_rtng(97)|shoot_speed(43)|weapon_length(81)|max_ammo(20)|thrust_damage(50, pierce), imodbits_missile|imodbit_balanced|imodbit_heavy, [], [fac_kingdom_5]],
+  ["steelbow","Steelbow", [("corsair_bow", 0),("corsair_bow_carry", ixmesh_carry)], itp_type_bow|itp_unique|itp_two_handed|itp_primary, itcf_shoot_bow|itcf_carry_bow_back,17962, weight(0.5)|abundance(100)|body_armor(32)|accuracy(96)|difficulty(7)|spd_rtng(78)|shoot_speed(98)|thrust_damage(48, pierce), imodbit_masterwork, []],
+  ["cho_crossbow","Repeating_Crossbow", [("cho", 0)], itp_type_crossbow|itp_merchandise|itp_two_handed|itp_primary|itp_cant_use_on_horseback, itcf_shoot_crossbow|itcf_carry_crossbow_back,5383, weight(5.75)|abundance(100)|accuracy(87)|difficulty(21)|spd_rtng(40)|shoot_speed(80)|max_ammo(8)|thrust_damage(55, pierce), imodbits_crossbow|imodbit_fine, []],
   ["items_end","Items_End", [("shield_round_a", 0)], 0, 0,1, weight(0)|abundance(100), imodbits_none, []],
 ]
