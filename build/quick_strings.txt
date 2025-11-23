@@ -2127,7 +2127,7 @@ qstr_{s4}:_Average:_{reg0 {s4}:_Average:_{reg0},_St.dev.:_{reg1},_Count:_{reg2}
 qstr_Printing_scores... Printing_scores...
 qstr_{reg0}:_{s10} {reg0}:_{s10}
 qstr_{reg0}._{reg1}:_{s10 {reg0}._{reg1}:_{s10}
-qstr_All_20_companions_re All_20_companions_recruited
+qstr_Player_companions_re Player_companions_recruited
 qstr_Conversation_#{reg0} Conversation_#{reg0}_chosen_out_of_{reg1}_total.
 qstr_{reg1}_{s1}_{reg2?ac {reg1}_{s1}_{reg2?accept:accepts}_the_offer.
 qstr_No_one_accepts_the_o No_one_accepts_the_offer.
