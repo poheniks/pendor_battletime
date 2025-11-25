@@ -1,5 +1,5 @@
 itemsfile version 3
-1573
+1636
  itm_no_item INVALID_ITEM INVALID_ITEM 1  invalid_item 0  12582914 9223388529554358287 3 0 1.500000 100 0 0 0 0 16384 103 0 90 0 522 528
  0
 0
@@ -2101,11 +2101,11 @@ itemsfile version 3
  0
 0
 
- itm_griffon_grandmaster_armor Griffon_Grandmaster_Armor Griffon_Grandmaster_Armor 1  pa_pop_armor_30 0  16781325 0 13019 704643494 27.000000 1 1 62 22 24 0 0 0 0 0 0 0
+ itm_griffon_grandmaster_armor Griffon_Grandmaster_Armor Griffon_Grandmaster_Armor 1  pa_pop_armor_30 0  16781325 0 13019 704643494 20.000000 1 3 67 26 24 0 0 0 0 0 0 0
  0
 0
 
- itm_griffon_grandmaster_armor_cape Griffon_Grandmaster_Armor_with_Cape Griffon_Grandmaster_Armor_with_Cape 1  pa_pop_armor_30_cape 0  16781325 0 13019 704643494 27.000000 1 1 62 22 24 0 0 0 0 0 0 0
+ itm_griffon_grandmaster_armor_cape Griffon_Grandmaster_Armor_with_Cape Griffon_Grandmaster_Armor_with_Cape 1  pa_pop_armor_30_cape 0  16781325 0 13019 704643494 20.000000 1 3 67 26 24 0 0 0 0 0 0 0
  0
 0
 
@@ -4846,10 +4846,30 @@ itemsfile version 3
  0
 0
 
- itm_arquebus_1 Arquebus Arquebus 1  pa_pop_arquebus_1 0  4644337391501329 555393482752 8000 132106 3.500000 1 0 0 92 0 0 40 160 0 1 356 0
+ itm_arquebus_1 Arquebus Arquebus 1  pa_pop_arquebus_1 0  4644337391501329 555393482752 8000 132106 3.500000 1 0 0 92 0 0 28 280 0 1 356 0
  0
 1
 -51.000000  5 600 1 1152921504606847614 720 2 1 0 721 2 1 101 725 2 1 45 1969 3 1008806316530991136 1 15 
+
+ itm_handgonne Handgonne Handgonne 1  pishal 0  4644337391501329 555393482752 8000 132106 2.500000 1 0 0 73 0 0 35 400 0 1 436 0
+ 0
+1
+-51.000000  5 600 1 1152921504606847614 720 2 1 0 721 2 1 101 725 2 1 45 1969 3 1008806316530991136 1 15 
+
+ itm_matchlock Musket Musket 1  matchlock_1 0  4644337391501329 555393482752 8000 132106 3.500000 1 0 0 94 0 0 30 320 0 1 376 0
+ 0
+1
+-51.000000  5 600 1 1152921504606847614 720 2 1 0 721 2 1 101 725 2 1 45 1969 3 1008806316530991136 1 15 
+
+ itm_pistol Flintlock_Pistol Flintlock_Pistol 1  fl_pistol 0  140737492549648 481036795904 8000 132106 1.500000 1 0 0 89 0 0 48 130 0 1 315 0
+ 0
+1
+-51.000000  4 600 1 1152921504606847614 720 2 1 27 721 2 1 36 1969 3 1008806316530991136 1 15 
+
+ itm_blunderbus Blunderbus Blunderbus 1  handgonne_chis_d 0  4644337391501329 555393482752 8000 132106 5.500000 1 0 0 88 0 0 45 150 0 1 306 0
+ 0
+1
+-51.000000  19 2071 1 72057594037927937 6 3 1224979098644774912 1 6 700 2 2 1 2124 1 100 2133 2 1224979098644774913 -350 2133 2 1224979098644774914 570 2136 3 1224979098644774915 -200 201 2105 2 1224979098644774914 1224979098644774915 738 2 2 9000 739 2 2 1224979098644774914 738 2 2 -9000 2136 3 1224979098644774916 -200 201 2105 2 1224979098644774913 1224979098644774916 738 2 2 1224979098644774913 1829 7 72057594037927937 2 8000 288230376151712884 0 288230376151712905 0 3 0 600 1 1152921504606847614 721 2 1 95 1969 3 1008806316530991136 1 15 
 
  itm_practice_arrows_2 Practice_Arrows Practice_Arrows 4  arena_arrow 0  flying_missile 2305843009213693952  quiver 3458764513820540928  quiver 1152921504606846976  5 2147483648 0 4398046511112 1.500000 100 0 0 0 0 0 0 0 95 80 0 0
  0
@@ -4934,7 +4954,11 @@ itemsfile version 3
  0
 0
 
- itm_bullets_1 Bullets Bullets 4  pa_pop_bullets_1 0  pa_pop_flying_bullet 2305843009213693952  pa_pop_bullets_flask 3458764513820540928  pa_pop_bullets_flask_inv 1152921504606846976  16810002 805306368 100 4398046511104 2.500000 1 0 0 0 0 0 0 0 3 50 269 0
+ itm_bullets_1 Lead_Shot Lead_Shot 4  pa_pop_bullets_1 0  pa_pop_flying_bullet 2305843009213693952  pa_pop_bullets_flask 3458764513820540928  pa_pop_bullets_flask_inv 1152921504606846976  16810002 805306368 100 4398046511104 2.500000 1 0 0 0 0 0 0 0 3 60 276 0
+ 0
+0
+
+ itm_bullets_2 Heavy_Lead_Shot Heavy_Lead_Shot 4  pa_pop_bullets_1 0  pa_pop_flying_bullet 2305843009213693952  pa_pop_bullets_flask 3458764513820540928  pa_pop_bullets_flask_inv 1152921504606846976  16810002 805306368 100 4398046511104 2.500000 1 0 0 0 0 0 0 0 3 30 286 0
  0
 0
 
@@ -6689,6 +6713,239 @@ itemsfile version 3
 0
 
  itm_heater_shield_16_rusty Ebony_Heater_Shield Ebony_Heater_Shield 1  shield_heater_rusty 0  4103 5100273664 1 167772194 2.000000 1 0 1 0 1 5 50 49 27 0 0 0
+ 0
+0
+
+ itm_griffon_mount Peter_Griffon Peter_Griffon 1  MTMDemi 0  65537 0 20002 110595670016 0.000000 1 0 70 0 8 350 37 37 0 0 558 0
+ 0
+0
+
+ itm_griffon_mount_grey Griffon Griffon 1  MTMDemi2 0  65537 0 20002 110595670016 0.000000 1 0 65 0 8 300 38 38 94 0 552 0
+ 0
+0
+
+ itm_griffon_mount_black Griffon Griffon 1  MTMDemi3 0  65537 0 20002 110595670016 0.000000 1 0 65 0 8 300 38 38 94 0 552 0
+ 0
+0
+
+ itm_griffon_mount_brown Griffon Griffon 1  MTMDemi4 0  65537 0 20002 110595670016 0.000000 1 0 65 0 8 300 38 38 94 0 552 0
+ 0
+0
+
+ itm_ivory_fountain_helmet Ivory_Guard_Helmet Ivory_Guard_Helmet 1  ivory_fountain_helmet 0  65548 0 6005 704643494 1.500000 3 61 2 0 15 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ivory_fountain_helmet_black Ivory_Lord_Helmet Ivory_Lord_Helmet 1  ivory_fountain_helmet_black 0  65548 0 6005 704643494 1.250000 3 62 3 0 20 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ivory_helmet Ivory_Helmet Ivory_Helmet 1  ivory_helm 0  65548 0 6005 704643494 2.000000 3 59 0 0 9 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ivory_helmet_mask Ivory_Masked_Helmet Ivory_Masked_Helmet 1  ivory_helm_mask 0  65548 0 6005 704643494 2.250000 3 60 1 0 12 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ranger_hood Ranger_Hood Ranger_Hood 1  drow_helmet3 0  65548 0 6005 704643494 0.400000 3 24 3 0 6 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_chunk_helmet1 Chunk_Helmet Chunk_Helmet 1  inv_chapel-de-fer_mail1 0  65548 0 6005 704643494 3.000000 3 40 0 0 12 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_chunk_helmet2 Chunk_Helmet Chunk_Helmet 1  inv_chapel-de-fer_mail2 0  65548 0 6005 704643494 3.000000 3 40 0 0 12 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_chunk_helmet3 Chunk_Helmet Chunk_Helmet 1  inv_chapel-de-fer_mail3 0  65548 0 6005 704643494 3.000000 3 40 0 0 12 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_chunk_helmet4 Chunk_Helmet Chunk_Helmet 1  inv_chapel-de-fer_cloth1 0  65548 0 6005 704643494 3.000000 3 40 0 0 12 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_chunk_helmet5 Chunk_Helmet Chunk_Helmet 1  inv_chapel-de-fer_cloth2 0  65548 0 6005 704643494 3.000000 3 40 0 0 12 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_chunk_helmet6 Chunk_Helmet Chunk_Helmet 1  inv_chapel-de-fer_cloth3 0  65548 0 6005 704643494 3.000000 3 40 0 0 12 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_chonk_helmet Chonk_Knight_Helmet Chonk_Knight_Helmet 1  hm_hlf_s01Y 0  2147549196 0 1155 704643494 7.500000 100 68 4 0 20 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_pistolier_helmet Handgonne_Helmet Handgonne_Helmet 1  helmet_Pistolier_A_01 0  65548 0 6005 704643494 3.000000 3 61 3 0 9 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_recent_helmet Chinese_Helmet Chinese_Helmet 1  elgante_armored 0  65548 0 6005 704643494 3.000000 3 62 3 0 9 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_exotic_helmet Exotic_Helmet Exotic_Helmet 1  helm19 0  2147549196 0 6005 704643494 3.000000 3 60 3 0 9 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_exotic_plumed_helmet Exotic_plumed_Helmet Exotic_plumed_Helmet 1  helm20 0  2147549196 0 6005 704643494 3.500000 3 64 4 0 15 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_super_plumed_helmet Super_Exotic_plumed_Helmet Super_Exotic_plumed_Helmet 1  armet_b 0  2147549196 0 6005 704643494 3.000000 3 65 4 0 15 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_maid_helm Maid_Helmet Maid_Helmet 1  maid_helm 0  65548 0 6005 704643494 1.000000 3 55 4 0 9 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_skaoi_helmet Skaoi_Helmet Skaoi_Helmet 1  skaoi_helmet 0  65548 0 6005 704643494 0.500000 3 63 5 0 9 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_skaoi_helmet_2 Skaoi_Helmet Skaoi_Helmet 1  skaoi_helmet_2 0  65548 0 6005 704643494 0.500000 3 63 5 0 9 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_valk_helmet Valkyrie_Helmet Valkyrie_Helmet 1  valk_helmet 0  65548 0 6005 704643494 4.000000 3 65 8 0 20 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ivory_armour Ivory_Plate Ivory_Plate 1  ivory_armour 0  16842765 0 11395 973078948 15.000000 5 1 59 18 15 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ivory_armour_knight Ivory_Knight_Plate Ivory_Knight_Plate 1  ivory_armour_knight 0  16842765 0 11395 973078948 16.000000 5 2 62 20 20 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ivory_armour_lord Ivory_Lord_Plate Ivory_Lord_Plate 1  ivory_armour_lord 0  16842765 0 11395 973078948 11.000000 5 3 65 23 25 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ranger_armour Ranger_Armour Ranger_Armour 1  gondor_faramir 0  553648141 0 1505 400556032 5.000000 6 1 36 19 10 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_chunk_armour Chunk_Plate_armour Chunk_Plate_armour 1  zhongjia_1 0  16842765 0 11395 973078948 41.000000 5 4 60 25 18 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_chonk_armour Chonk_Plate_armour Chonk_Plate_armour 1  hm_arm_masW 0  16842765 0 11395 973078948 39.000000 5 5 69 29 21 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_tsy_armour Tsy_Chonk_Plate_armour Tsy_Chonk_Plate_armour 1  hm_arm_masW 0  16842765 0 11395 973078948 34.000000 5 6 72 32 34 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plume_armour Exotic_Knight_Plate Exotic_Knight_Plate 1  maximilian_armour 0  16842765 0 11395 973078948 22.000000 5 3 62 22 15 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_tetsu_armour Black_Exotic_Knight_Plate Black_Exotic_Knight_Plate 1  maximilian_armour_1 0  16842765 0 11395 973078948 13.000000 5 2 64 24 21 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_handgonne_armour Handgonne_Plate Handgonne_Plate 1  cuirass_on_mail_chis 0  16842765 0 11395 973078948 18.000000 5 2 60 20 15 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_valk_armor Valkyrie_Armour Valkyrie_Armour 1  valk_armor 0  16842765 0 11395 973078948 10.000000 5 4 50 20 15 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_skaoi_armor Skaoi_Armour Skaoi_Armour 1  skaoi_armor 0  16842765 0 11395 973078948 3.000000 5 3 40 15 12 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_maid_armor Maid_Armour Maid_Armour 1  maid_armor 0  16842765 0 11395 973078948 4.000000 5 2 30 15 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ivory_greaves Ivory_Greaves Ivory_Greaves 1  ivory_greaves 0  536874766 0 6557 400556032 1.000000 1 0 0 36 9 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_chunk_greaves Chunk_Greaves Chunk_Greaves 1  hm_boo_masU 0  536874766 0 6557 400556032 5.000000 1 0 0 39 13 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_chonk_greaves Chonk_Knight_Greaves Chonk_Knight_Greaves 1  hm_boo_masW 0  536874766 0 6557 400556032 4.500000 1 0 0 42 17 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ivory_gauntlets Ivory_Gauntlets Ivory_Gauntlets 2  ivory_gauntletsL 0  ivory_gauntletsL 134217728  15 0 2116 973078948 0.600000 1 0 9 0 18 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_chunk_gauntlets Chunk_Gauntlets Chunk_Gauntlets 2  ga_plate_mittens2_L 0  ga_plate_mittens2_L 134217728  15 0 2116 973078948 4.000000 1 0 9 0 12 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_chonk_gauntlets Chonk_Knight_Gauntlets Chonk_Knight_Gauntlets 2  hm_glv_masW_L 0  hm_glv_masW_L 134217728  15 0 2116 973078948 3.000000 1 0 12 0 18 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_citadel_shield Citadel_Shield Citadel_Shield 1  gondor_shield_vs2 0  7 4831838208 4101 167772194 1.500000 1 0 22 0 6 800 100 97 40 0 0 0
+ 0
+0
+
+ itm_bigshield Big_Shield Big_Shield 1  bigshield 0  7 4831838208 4101 167772194 10.000000 1 0 30 0 7 2000 90 105 27 0 0 0
+ 0
+0
+
+ itm_buckler Buckler Buckler 1  portuguese_buckler_a 0  7 5100273664 2505 167772194 1.000000 1 0 25 0 4 1500 100 0 19 0 0 0
+ 0
+0
+
+ itm_dunedain_longsword Dunedain_Longsword Dunedain_Longsword 1  anduril 0  274792451 9223635924301119728 3653 222228 1.200000 3 0 0 0 16 53248 110 0 112 0 297 49
+ 0
+0
+
+ itm_ivorysword Ivory_Glory_Sword Ivory_Glory_Sword 1  ivorysword 0  274792451 9223635924301119728 3653 222228 1.500000 3 0 0 0 21 53248 133 0 147 0 304 60
+ 0
+0
+
+ itm_dunedain_sword Dunedain_Sword Dunedain_Sword 2  Truth 0  Truth_scab 3458764513820540928  4259842 9223388564182532111 1211 222228 0.700000 5 0 0 0 12 38912 115 0 94 0 290 38
+ 0
+0
+
+ itm_side_sword Chinese_Sword Chinese_Sword 1  side_sword_yeah 0  4259842 9223388564182532111 1211 222228 1.500000 5 0 0 0 12 38912 109 0 105 0 295 42
+ 0
+0
+
+ itm_gondor_spear Gondor_Short_Spear Gondor_Short_Spear 1  gondor_spear1 0  2251800891949060 31243728790228224 247 9226 1.000000 100 0 0 0 12 12288 105 0 180 0 296 45
+ 0
+0
+
+ itm_gondor_spear2 Gondor_Long_Spear Gondor_Long_Spear 1  gondor_spear2 0  2251800891949060 31243728790228224 247 9226 3.000000 100 0 0 0 14 12288 99 0 200 0 297 48
+ 0
+0
+
+ itm_fountain_spear Fountain_Spear Fountain_Spear 1  fountain_spear 0  2251800891949060 31243728790228224 247 9226 2.500000 100 0 0 0 20 12288 104 0 201 0 301 50
+ 0
+0
+
+ itm_moonspear Moon_Spear Moon_Spear 1  moonspear 0  2251800891949060 31243728790228224 247 9226 2.500000 100 0 0 0 20 12288 108 0 198 0 306 64
+ 0
+0
+
+ itm_savage_throwing Savage_Pila Savage_Pila 1  pilum100BClight 0  71368714 6174277632 595 4398046781448 8.000000 20 0 0 0 6 0 97 43 81 20 306 0
+ 1
+ 19
+0
+
+ itm_steelbow Steelbow Steelbow 2  corsair_bow 0  corsair_bow_carry 3458764513820540928  6295560 5905584128 17962 131072 0.500000 100 0 32 96 7 0 78 98 0 0 304 0
+ 0
+0
+
+ itm_cho_crossbow Repeating_Crossbow Repeating_Crossbow 1  cho 0  274792457 5637160960 5383 132106 5.750000 100 0 0 87 21 0 40 80 0 8 311 0
  0
 0
 
