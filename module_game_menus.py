@@ -4913,7 +4913,7 @@ game_menus = [
         (store_random_in_range, ":var2", 0, 100),
         (assign, ":var3", 0),
         (try_begin),
-          (lt, ":var0", 20),
+          (lt, ":var0", 35),
           (assign, ":var4", "itm_qualis"),
         (else_try),
           (lt, ":var0", 40),
@@ -7208,7 +7208,57 @@ game_menus = [
       ),
     ],
   ),
-
+ #### export/import NPCs begin ####
+  ("export_import_npcs", mnf_enable_hot_keys,
+  "Please choose an NPC, then press key C to view and export/import this character.^^You choose {reg0?{s0}:none}.",
+  "none",
+    [
+      (assign, reg0, "$g_player_troop"),
+      (str_store_troop_name, s0, "$g_player_troop"),
+    ],
+    [
+      ("export_import_back",[],"Go back",
+        [
+          (assign, "$g_player_troop", "trp_player"),
+          (set_player_troop, "$g_player_troop"),
+          (jump_to_menu, "mnu_camp_action"),
+        ]
+      ),
+    ]+[("export_import_npc"+str(x+1),
+        [
+          (store_add, ":dest_npc", "trp_npc_ironside", x),
+          (str_store_troop_name, s0, ":dest_npc"),
+        ], "{s0}",
+        [
+          (store_add, ":dest_npc", "trp_npc_ironside", x),
+          (assign, "$g_player_troop", ":dest_npc"),
+          (set_player_troop, "$g_player_troop"),
+        ]) for x in range(0, 8)]+[
+      ("export_import_next",[],"Next page", [(jump_to_menu, "mnu_export_import_npcs_2")]),
+    ]
+  ),
+ 
+  ("export_import_npcs_2", mnf_enable_hot_keys,
+    "Please choose an NPC, then press key C to view and export/import this character.^^You choose {reg0?{s0}:none}.",
+    "none",
+    [
+      (assign, reg0, "$g_player_troop"),
+      (str_store_troop_name, s0, "$g_player_troop"),
+    ],
+    [
+      ("export_import_prev",[],"Previous page", [(jump_to_menu, "mnu_export_import_npcs")]),
+    ]+[("export_import_npc"+str(x+1),
+      [
+        (store_add, ":dest_npc", "trp_npc_ironside", x),
+        (str_store_troop_name, s0, ":dest_npc"),
+      ], "{s0}",
+      [
+        (store_add, ":dest_npc", "trp_npc_ironside", x),
+        (assign, "$g_player_troop", ":dest_npc"),
+        (set_player_troop, "$g_player_troop"),
+      ]) for x in range(8, 16)]
+  ),
+#### export/import NPCs end #### 
   ("camp_action", mnf_scale_picture,
     "Choose an action:",
     "none",
@@ -7243,7 +7293,13 @@ game_menus = [
         (jump_to_menu, "mnu_camp_action_read_book"),
       ]
       ),
-
+      #### export/import NPCs begin ####
+      ("action_export_import",[],"Export/import NPCs.",
+        [
+          (jump_to_menu, "mnu_export_import_npcs"),
+        ]
+      ),
+      #### export/import NPCs end ####
       ("action_rename_party",
       [],
       "Rename_your_party.",
