@@ -6916,7 +6916,7 @@ itemsfile version 3
  0
 0
 
- itm_side_sword Chinese_Sword Chinese_Sword 1  side_sword_yeah 0  4259842 9223388564182532111 1211 222228 1.500000 5 0 0 0 12 38912 109 0 105 0 295 42
+ itm_side_sword Chinese_Sword Chinese_Sword 1  side_sword_yeah 0  4259842 9223388529822793743 1211 222228 1.500000 5 0 0 0 12 38912 109 0 105 0 295 42
  0
 0
 
