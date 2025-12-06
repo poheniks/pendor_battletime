@@ -1,4 +1,4 @@
-3303
+3305
 qstr_Next_Page Next_Page
 qstr_Co_op_Admin_Panel Co-op_Admin_Panel
 qstr_Game_Rules:^ Game_Rules:^
@@ -1707,8 +1707,8 @@ qstr_{s40}_has_picked_{s4 {s40}_has_picked_{s41}._
 qstr_Battle_result_saved. Battle_result_saved.
 qstr_You_got_{reg1}_exper You_got_{reg1}_experience.
 qstr_pendor_player_stats pendor_player_stats
-qstr_{s30}_deaths {s30}_deaths
-qstr_{s30}_kills {s30}_kills
+qstr_{s30}_Deaths {s30}_Deaths
+qstr_{s30}_Kills {s30}_Kills
 qstr_num_parties_enemy num_parties_enemy
 qstr_p_enemy{reg20}_banne p_enemy{reg20}_banner
 qstr_p_enemy{reg20}_party p_enemy{reg20}_partyid
@@ -1726,11 +1726,11 @@ qstr_p_ally{reg20}_{reg21}_ p_ally{reg20}_{reg21}_num
 qstr_hero_num hero_num
 qstr_troops_num troops_num
 qstr_Battle_setup_complet Battle_setup_complete.
-qstr_attacking_{s3} attacking_{s3}
-qstr_defending_{s5}_again defending_{s5}_against_{s3}
-qstr_vs_{s3}_near_{s0} vs_{s3}_near_{s0}
-qstr_battle_name battle_name
-qstr_{s2}_{s4} {s2}_{s4}
+qstr_Attacking_{s3} Attacking_{s3}
+qstr_Defending_{s5}_again Defending_{s5}_against_{s3}
+qstr_{s3}_near_{s0} {s3}_near_{s0}
+qstr_Battle Battle
+qstr_{s4} {s4}
 qstr_p_ally0_{reg21}_cls p_ally0_{reg21}_cls
 qstr_battle_result battle_result
 qstr_p_enemy{reg20}_numsta p_enemy{reg20}_numstacks_cas
@@ -1744,6 +1744,11 @@ qstr_p_ally{reg20}_{reg21}_w p_ally{reg20}_{reg21}_wnd
 qstr_p_ally0_numstacks p_ally0_numstacks
 qstr_p_ally0_{reg21}_trp p_ally0_{reg21}_trp
 qstr_p_ally0_{reg21}_stk_ p_ally0_{reg21}_stk_xp
+qstr_Defeat Defeat
+qstr_Victory Victory
+qstr_Retreat Retreat
+qstr_Result Result
+qstr_No_player_stats_to_u No_player_stats_to_upload!
 qstr_pendor_trp{reg24}_id pendor_trp{reg24}_id
 qstr_pendor_trp{reg24}_na pendor_trp{reg24}_name
 qstr_pendor_trp{reg24}_st pendor_trp{reg24}_str
@@ -1775,16 +1780,13 @@ qstr_player_inv_mgt player_inv_mgt
 qstr_party_inv{reg20}_itm party_inv{reg20}_itm
 qstr_party_inv{reg20}_imd party_inv{reg20}_imd
 qstr_Player Player
-qstr_Pendor_POST_message_ Pendor_POST_message_callback_recieved
-qstr_pendor_test_post_mes pendor_test_post_message_failed
-qstr_Sheet1!A1:Z1 Sheet1!A1:Z1
-qstr_player_stats player_stats
-qstr_name name
-qstr_hello hello
-qstr_https://script.googl https://script.googleusercontent.com/macros/s/AKfycbzBizPcZSarUy1TYvCwcmonk32hWnJ%5FCcM7142eLCNl6qIy6OW%5FXR4flVoGM8OylahS5Q/exec
-qstr_Mozilla/5.0__Windows Mozilla/5.0_(Windows_NT_6.1)_AppleWebKit/537.36_(KHTML,_like_Gecko)_Chrome/109.0.0.0_Safari/537.36>
-qstr_d d
-qstr_https://webhook.site https://webhook.site/e9c609d7-c228-4038-8324-fdc050bd84cc
+qstr_Success Success
+qstr_Stats_Updated! Stats_Updated!
+qstr_POST_callback_failed POST_callback_failed...
+qstr_Failed_to_upload_pla Failed_to_upload_player_stats!_Check_if_python_server_is_running
+qstr_Uploading_player_sta Uploading_player_stats...
+qstr_localhost localhost
+qstr_Battletime Battletime
 qstr_You_ve_got_the_keys_ You've_got_the_keys_to_the_dungeon.
 qstr_You_have_escaped_fro You_have_escaped_from_the_fight_with_the_scribe,_talk_to_the_Ghost_Lady_again.
 qstr_You_have_been_knocke You_have_been_knocked_out_by_the_scribe,_talk_to_the_Ghost_Lady_again.

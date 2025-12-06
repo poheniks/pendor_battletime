@@ -2577,9 +2577,9 @@ coop_scripts = [
             (str_store_player_username, s30, ":player_id"),  
             (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
             
-            (dict_get_int, ":cur_player_deaths", "$pendor_player_stats_dict", "@{s30}_deaths", 0),
+            (dict_get_int, ":cur_player_deaths", "$pendor_player_stats_dict", "@{s30}_Deaths", 0),
             (store_add, ":updated_player_deaths", ":cur_player_deaths", 1), 
-            (dict_set_int, "$pendor_player_stats_dict", "@{s30}_deaths", ":updated_player_deaths"),
+            (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Deaths", ":updated_player_deaths"),
             (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
 
         (try_end),
@@ -2601,9 +2601,9 @@ coop_scripts = [
             (str_store_player_username, s30, ":player_id"),
             (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
 
-            (dict_get_int, ":cur_player_kills", "$pendor_player_stats_dict", "@{s30}_kills", 0),
+            (dict_get_int, ":cur_player_kills", "$pendor_player_stats_dict", "@{s30}_Kills", 0),
             (store_add, ":updated_player_kills", ":cur_player_kills", ":kill_score"), 
-            (dict_set_int, "$pendor_player_stats_dict", "@{s30}_kills", ":updated_player_kills"),
+            (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Kills", ":updated_player_kills"),
             (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
 
         (try_end),
@@ -3082,13 +3082,13 @@ coop_scripts = [
     (try_begin),
         (this_or_next|eq, "$coop_battle_type", coop_battle_type_siege_player_attack),
         (eq, "$coop_battle_type", coop_battle_type_village_player_attack),
-        (str_store_string, s4, "@attacking {s3}"),
+        (str_store_string, s4, "@Attacking {s3}"),
     (else_try),
         (this_or_next|eq, "$coop_battle_type", coop_battle_type_siege_player_defend),
         (eq, "$coop_battle_type", coop_battle_type_village_player_defend),
         (party_get_battle_opponent, ":defending_town", "$coop_encountered_party"),
         (str_store_party_name, s5, ":defending_town"),
-        (str_store_string, s4, "@defending {s5} against {s3}"),
+        (str_store_string, s4, "@Defending {s5} against {s3}"),
     (try_end),
 
     (try_begin),
@@ -3109,10 +3109,10 @@ coop_scripts = [
         (try_end),
 
         (str_store_party_name, s0, ":closest_town"),
-        (str_store_string, s4, "@vs {s3} near {s0}"),
+        (str_store_string, s4, "@{s3} near {s0}"),
     (try_end),
     
-    (dict_set_str, "$pendor_player_stats_dict", "@battle_name", "@{s2} {s4}"),
+    (dict_set_str, "$pendor_player_stats_dict", "@Battle", "@{s4}"), #removed s2, the player party name - it's redundant if only one person is hosting
     (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
     (dict_free, "$pendor_player_stats_dict"),
 
@@ -3476,16 +3476,36 @@ coop_scripts = [
         (assign, "$num_routed_us", reg0), 
         (call_script, "script_party_count_members_with_full_health", "p_collective_friends"),        
         (assign, "$num_routed_allies", reg0), #use routed troops to avoid a 2nd round of battle
+        (str_store_string, s32, "@Defeat"),
       (else_try),
         (eq, "$g_battle_result", 1), #player won
         (call_script, "script_party_count_members_with_full_health", "p_collective_enemy"),
         (assign, "$num_routed_enemies", reg0), #use routed troops to avoid a 2nd round of battle
+        (str_store_string, s32, "@Victory"),
       (else_try),
         (eq, "$g_battle_result", 0), #retreat
+        (str_store_string, s32, "@Retreat"),
       (try_end),
 
 
     (dict_free, "$coop_dict"),
+
+    #PENDOR - upload players' stats
+    (dict_create, "$pendor_player_stats_dict"),
+    (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+    (dict_get_size, reg32, "$pendor_player_stats_dict"),
+    (try_begin),
+        (gt, reg32, 1),
+        (dict_set_str, "$pendor_player_stats_dict", "@Result", s32),
+        (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+
+        (call_script, "script_pendor_post_stats"),
+    (else_try),
+        (display_message, "@No player stats to upload!"),
+    (try_end),
+
+
+
     (try_end),
     ]),	
 
@@ -3880,43 +3900,24 @@ coop_scripts = [
     (try_end),
     ]),	 
      
-    ("pendor_test_post_message_callback", [
-        (display_message, "@Pendor POST message callback recieved"),
-        (display_message, s0),
+    ("pendor_post_message_callback", [
+        (try_begin),
+            (display_debug_message, s0),
+            (str_equals, s0, "@Success"),
+            (display_message, "@Stats Updated!"),   
+        (else_try),
+            (display_message, "@POST callback failed..."),
+        (try_end),
     ]),
 
-    ("pendor_test_post_message_failed", [
-        (display_message, "@pendor_test_post_message_failed"),
+    ("pendor_post_message_failed", [
+        (display_message, "@Failed to upload player stats! Check if python server is running"),
     ]),   
 
-    ("pendor_test_post_message", [
-        (str_store_string, s47, "@Sheet1!A1:Z1"),
-        
-        (dict_create, "$g_player_stats"),
-        (dict_load_file, "$g_player_stats", "@player_stats", 2),
-        #(dict_set_str, "$g_player_stats", "@range", s47),
-        #(dict_set_str, "$g_player_stats", "@majorDimension", "@ROWS"),
-        #(dict_set_str, "$g_player_stats", "@values", "@[ ['battletime testing', '2', '3'] ]"),
-        #(dict_to_url_encoded_json, s48, "$g_player_stats"),
-        #(dict_save_json, "$g_player_stats", "@player_stats"),
-        
-        (dict_set_str, "$g_player_stats", "@name", "@hello"),
-        (dict_to_url_encoded_json, s48, "$g_player_stats"),
-        (dict_save_json, "$g_player_stats", "@player_stats"),
-
-        (str_store_string, s50, "@https://script.googleusercontent.com/macros/s/AKfycbzBizPcZSarUy1TYvCwcmonk32hWnJ%5FCcM7142eLCNl6qIy6OW%5FXR4flVoGM8OylahS5Q/exec"),
-        (str_store_string, s51, "@Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36>"), 
-        #(str_store_string, s51, "@Pendor Battletime"),
-        #(send_post_message_to_url_advanced, s50, "@", s48, "script_pendor_test_post_message_callback", "script_pendor_test_post_message_failed", 1), 
-        
-        (send_message_to_url, s50),
-        (send_post_message_to_url_advanced, s50, "@d", "@", "script_pendor_test_post_message_callback", "script_pendor_test_post_message_failed", 1, 50000), 
-        (send_post_message_to_url_advanced, "@https://webhook.site/e9c609d7-c228-4038-8324-fdc050bd84cc", s51, s50, "script_pendor_test_post_message_callback", "script_pendor_test_post_message_failed", 1, 2),
-
-        #(display_message, "@\"test quotations\""),
-        (display_message, s50),
-        (display_message, s51),
-        (display_message, s48),
+    ("pendor_post_stats", [
+        (display_message, "@Uploading player stats..."),
+        (str_store_string, s31, "@localhost"),
+        (send_post_message_to_url_advanced, s31, "@Battletime", "@", "script_pendor_post_message_callback", "script_pendor_post_message_failed", 1, 10000),
     ]),
 
 ]

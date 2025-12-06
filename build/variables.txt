@@ -1572,4 +1572,3 @@ coop_agent_party
 pendor_player_stats_dict
 coop_no_enemy_parties
 coop_no_ally_parties
-g_player_stats
