@@ -3070,7 +3070,6 @@ coop_scripts = [
     (dict_free, "$coop_dict"),
     (display_message, "@Battle setup complete."),
     
-    #(call_script, "script_pendor_test_post_message"),
     #PENDOR - set up players' stats dict
     (dict_create, "$pendor_player_stats_dict"),
     
@@ -3798,8 +3797,11 @@ coop_scripts = [
           (troop_set_name, ":cur_troop", s0),
       
           (try_begin),#only copy inventory to SP when optional
-            (this_or_next|game_in_multiplayer_mode), 
-            (eq, "$coop_disable_inventory", 0),
+            #(this_or_next|game_in_multiplayer_mode), 
+            #(eq, "$coop_disable_inventory", 0),
+            #disable these two checks above to allow inventory access without overwriting heros' equipment
+
+            (game_in_multiplayer_mode),
             (try_for_range, reg20, ek_item_0, ek_food), 
               (dict_get_int, ":item", "$coop_dict", "@hero_{reg21}_itm{reg20}"),
               (dict_get_int, ":imod", "$coop_dict", "@hero_{reg21}_imd{reg20}"),
