@@ -6904,11 +6904,11 @@ itemsfile version 3
  0
 0
 
- itm_dunedain_longsword Dunedain_Longsword Dunedain_Longsword 1  anduril 0  274792451 9223635924301119728 3653 222228 1.200000 3 0 0 0 16 53248 110 0 112 0 297 49
+ itm_dunedain_longsword Dunedain_Longsword Dunedain_Longsword 1  anduril 0  6356995 9223635924301119728 3653 222228 1.200000 3 0 0 0 16 53248 110 0 112 0 297 49
  0
 0
 
- itm_ivorysword Ivory_Glory_Sword Ivory_Glory_Sword 1  ivorysword 0  274792451 9223635924301119728 3653 222228 1.500000 3 0 0 0 21 53248 133 0 147 0 304 60
+ itm_ivorysword Ivory_Glory_Sword Ivory_Glory_Sword 1  ivorysword 0  6356995 9223635924301119728 3653 222228 1.500000 3 0 0 0 21 53248 133 0 147 0 304 60
  0
 0
 
@@ -6945,7 +6945,7 @@ itemsfile version 3
  0
 0
 
- itm_cho_crossbow Repeating_Crossbow Repeating_Crossbow 1  cho 0  274792457 5637160960 5383 132106 5.750000 100 0 0 87 21 0 40 80 0 8 311 0
+ itm_cho_crossbow Repeating_Crossbow Repeating_Crossbow 1  cho 0  274792457 5637160960 5383 132106 5.750000 100 0 0 91 21 0 45 85 0 8 325 0
  0
 0
 
