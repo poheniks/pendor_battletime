@@ -1569,5 +1569,6 @@ coop_form_line_grp_5
 coop_form_line_grp_6
 coop_form_line_last_pos
 coop_agent_party
+pendor_player_stats_dict
 coop_no_enemy_parties
 coop_no_ally_parties

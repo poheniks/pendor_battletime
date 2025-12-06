@@ -1,0 +1,13 @@
+#postURL points to a Google Apps Script. This script is editable here:
+#https://script.google.com/d/1yoHxfWTh4PYEHXNswNQLpcG5gLDgz73wKHkx1wwqvR4Y3izXdHpsjD_O/edit?usp=sharing
+postUrl=https://script.google.com/macros/s/AKfycbzBizPcZSarUy1TYvCwcmonk32hWnJ_CcM7142eLCNl6qIy6OW_XR4flVoGM8OylahS5Q/exec
+
+#name of the warband module
+battletimeModuleName=pendor_battletime
+
+#name of the .json file. Do not change unless you also change the warband script that writes to this filename
+statsJsonName=pendor player stats.json
+
+#you can replace the ~ with a direct file path if python cannot find your user directory
+wseFolderWindows=~/Documents/Mount&Blade Warband/WSE/ 
+wseFolderLinux=~/.local/share/Steam/steamapps/compatdata/48700/pfx/drive_c/users/steamuser/Documents/Mount&Blade Warband/WSE/
