@@ -22859,7 +22859,7 @@ game_menus = [
   ),
 
   ("start_phase_3", mnf_disable_all_keys|mnf_scale_picture,
-    "{s16}^^Exhausted by the time you find the inn in {s1}, you fall asleep quickly. Awake before dawn and eager to explore your surroundings, you venture out onto the streets, which are still deserted in the early morn. Suddenly, the rasp of a blade sliding from its scabbard makes the hairs of your neck stand on end. You are instantly on the alert for trouble...",
+    "{s16}^^Exhausted by the time you find the inn in {s1}, you fall asleep quickly. Awake before dawn and eager to explore your surroundings, you venture out onto the streets, which are still deserted in the early morn. Suddenly, the rasp of a blade sliding from its scabbard makes the hairs of your neck stand on end. After 1.3 seconds, you are on the alert for trouble...",
     "none",
     [
       (set_background_mesh, "mesh_pic_pendor_start_phase_3"),

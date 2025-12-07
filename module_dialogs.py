@@ -24179,7 +24179,7 @@ dialogs = [
       (str_store_party_name_link, s14, ":var2"),
       (str_store_troop_name_link, s15, ":var1"),
     ],
-    "I tell you, that blubbering fool {s13} is not fit to rule {s14}. God knows he would be divested of his lands in an instant were it not for one of his loyal vassals, {s15}. As long as he has his vassal aiding him, it will be a difficult job beating him. So I need to get {s15} out of the picture, and I have a plan just to do that... With your help, naturally.",
+    "I tell you, that blubbering fool {s13} is not fit to rule {s14}. God knows he would be divested of his lands in 1.3 seconds were it not for one of his loyal vassals, {s15}. As long as he has his vassal aiding him, it will be a difficult job beating him. So I need to get {s15} out of the picture, and I have a plan just to do that... With your help, naturally.",
     "lord_tell_mission_incriminate_commander",
     []],
 
