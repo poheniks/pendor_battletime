@@ -44,6 +44,10 @@ from header_skills import *
 # The effects of these skills can only be removed if the skill is disabled with sf_inactive flag.
 # If you want to add a new skill, use the reserved skills or use non-hardcoded skills.
 
+# max skill explanation here: https://forums.taleworlds.com/index.php?threads/skill-level-15-for-party-skills-possible.324586/post-7664483 
+# raise STR skills to 15 
+# raise AGI skills Horse Archery, Riding, and Athletics to 15
+
 skills = [
   ("trade", "Trade", sf_base_att_cha|sf_effects_party, 10, "Every level of this skill reduces your trade penalty by 5%%. (Party skill)"),
   ("leadership", "Leadership", sf_base_att_cha, 10, "Every point increases maximum number of troops you can command by 10, increases your party morale and reduces troop wages by 5%%. (Leader skill)"),
@@ -68,9 +72,9 @@ skills = [
   ("reserved_7", "Reserved Skill 7", sf_base_att_int|sf_inactive, 10, "This is a reserved skill."),
   ("reserved_8", "Reserved Skill 8", sf_base_att_int|sf_inactive, 10, "This is a reserved skill."),
   ("looting", "Looting", sf_base_att_agi|sf_effects_party, 10, "This skill increases the amount of loot obtained by 10%% per skill level. (Party skill)"),
-  ("horse_archery", "Horse Archery", sf_base_att_agi, 10, "Reduces damage and accuracy penalties for archery and throwing from horseback. (Personal skill)"),
-  ("riding", "Riding", sf_base_att_agi, 10, "Enables you to ride horses of higher difficulty levels and increases your riding speed and manuever. (Personal skill)"),
-  ("athletics", "Athletics", sf_base_att_agi, 10, "Improves your running speed. (Personal skill)"),
+  ("horse_archery", "Horse Archery", sf_base_att_agi, 15, "Reduces damage and accuracy penalties for archery and throwing from horseback. (Personal skill)"),
+  ("riding", "Riding", sf_base_att_agi, 15, "Enables you to ride horses of higher difficulty levels and increases your riding speed and manuever. (Personal skill)"),
+  ("athletics", "Athletics", sf_base_att_agi, 15, "Improves your running speed. (Personal skill)"),
   ("shield", "Shield", sf_base_att_agi, 10, "Reduces damage to shields (by 8%% per skill level) and improves shield speed and coverage. (Personal skill)"),
   ("weapon_master", "Weapon Master", sf_base_att_agi, 10, "Makes it easier to learn weapon proficiencies and increases the proficiency limits. Limits go as: 60, 100, 140, 180, 220, 260, 300, 340, 380, 420. (Personal skill)"),
   ("reserved_9", "Reserved Skill 9", sf_base_att_agi|sf_inactive, 10, "This is a reserved skill."),
@@ -78,10 +82,10 @@ skills = [
   ("reserved_11", "Reserved Skill 11", sf_base_att_agi|sf_inactive, 10, "This is a reserved skill."),
   ("reserved_12", "Reserved Skill 12", sf_base_att_agi|sf_inactive, 10, "This is a reserved skill."),
   ("reserved_13", "Reserved Skill 13", sf_base_att_agi|sf_inactive, 10, "This is a reserved skill."),
-  ("power_draw", "Power Draw", sf_base_att_str, 10, "Lets character use more powerful bows. Each point to this skill (up to four plus power-draw requirement of the bow) increases bow damage by 14%%. (Personal skill)"),
-  ("power_throw", "Power Throw", sf_base_att_str, 10, "Each point to this skill increases throwing damage by 10%%. (Personal skill)"),
-  ("power_strike", "Power Strike", sf_base_att_str, 10, "Each point to this skill increases melee damage by 8%%. (Personal skill)"),
-  ("ironflesh", "Ironflesh", sf_base_att_str, 10, "Each point to this skill increases hit points by +2. (Personal skill)"),
+  ("power_draw", "Power Draw", sf_base_att_str, 15, "Lets character use more powerful bows. Each point to this skill (up to four plus power-draw requirement of the bow) increases bow damage by 14%%. (Personal skill)"),
+  ("power_throw", "Power Throw", sf_base_att_str, 15, "Each point to this skill increases throwing damage by 10%%. (Personal skill)"),
+  ("power_strike", "Power Strike", sf_base_att_str, 15, "Each point to this skill increases melee damage by 8%%. (Personal skill)"),
+  ("ironflesh", "Ironflesh", sf_base_att_str, 15, "Each point to this skill increases hit points by +2. (Personal skill)"),
   ("reserved_14", "Reserved Skill 14", sf_base_att_str|sf_inactive, 10, "This is a reserved skill."),
   ("reserved_15", "Reserved Skill 15", sf_base_att_str|sf_inactive, 10, "This is a reserved skill."),
   ("reserved_16", "Reserved Skill 16", sf_base_att_str|sf_inactive, 10, "This is a reserved skill."),
