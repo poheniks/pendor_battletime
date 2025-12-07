@@ -3711,7 +3711,7 @@ simple_triggers = [
     (else_try),
       (gt, "$npc_with_political_grievance", 0),
       (eq, "$g_infinite_camping", 0),
-      (eq, "$disable_npc_complaints", 0),
+      (eq, 0, 0),
       (try_begin),
         (main_party_has_troop, "$npc_with_political_grievance"),
         (neq, "$g_player_is_captive", 1),
