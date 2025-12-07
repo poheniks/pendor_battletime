@@ -2600,8 +2600,12 @@ coop_scripts = [
 
             (str_store_player_username, s30, ":player_id"),
             (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+            
+            (try_begin),
+                (neg|dict_has_key, "$pendor_player_stats_dict", "@{s30}_Deaths"),
+                (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Deaths", 0),
+            (try_end),
 
-            (dict_get_int, ":update_player_deaths", "$pendor_player_stats_dict", "@{s30}_Deaths", 0), 
 
             (dict_get_int, ":cur_player_kills", "$pendor_player_stats_dict", "@{s30}_Kills", 0),
             (store_add, ":updated_player_kills", ":cur_player_kills", ":kill_score"), 
