@@ -3803,7 +3803,8 @@ coop_scripts = [
             (eq, "$coop_disable_inventory", 0),
             #REENABLED - disable these two checks above to allow inventory access without overwriting heros' equipment
 
-            (game_in_multiplayer_mode),
+            #(game_in_multiplayer_mode),
+            
             (try_for_range, reg20, ek_item_0, ek_food), 
               (dict_get_int, ":item", "$coop_dict", "@hero_{reg21}_itm{reg20}"),
               (dict_get_int, ":imod", "$coop_dict", "@hero_{reg21}_imd{reg20}"),
