@@ -787,10 +787,14 @@ script_pendor_copy_troop_to_file = 785
 script_pendor_copy_file_to_troops = 786
 script_coop_copy_hero_to_file = 787
 script_coop_copy_file_to_hero = 788
-script_pendor_add_bot_totals = 789
-script_pendor_add_bot_stats = 790
-script_pendor_post_message_callback = 791
-script_pendor_post_message_failed = 792
-script_pendor_post_stats = 793
+script_pendor_set_battle_name = 789
+script_pendor_set_initial_player_stats = 790
+script_pendor_add_bot_totals = 791
+script_pendor_add_bot_stats = 792
+script_pendor_on_agent_kill = 793
+script_pendor_set_battle_result_and_upload_stats = 794
+script_pendor_post_stats = 795
+script_pendor_post_message_callback = 796
+script_pendor_post_message_failed = 797
 
 

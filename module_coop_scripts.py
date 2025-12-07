@@ -725,20 +725,7 @@ coop_scripts = [
    [
     (store_script_param, ":player_no", 1),
     
-    # Create intitial k/d for pendor players' stats
-    (dict_create, "$pendor_player_stats_dict"),
-    (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
-    (str_store_player_username, s30, ":player_no"),
-    (try_begin),    
-        (neg|dict_has_key, "$pendor_player_stats_dict", "@{s30}_Kills"),
-        (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Kills", 0),
-    (try_end),
-    (try_begin),    
-        (neg|dict_has_key, "$pendor_player_stats_dict", "@{s30}_Deaths"),
-        (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Deaths", 0),
-    (try_end),   
-    (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
-    (dict_free, "$pendor_player_stats_dict"),
+    (call_script, "script_pendor_set_initial_player_stats", ":player_no"),
 
     (try_begin),
       (gt, ":player_no", 0), #dont send stats to server
@@ -2574,56 +2561,8 @@ coop_scripts = [
 #CLIENT CRASH BUG WORKAROUND END ################################################################
 
 #PENDOR custom - save players' stats 
-    (try_begin),
-        #only host reports
-        (multiplayer_is_server),
-        (agent_is_human, ":dead_agent_no"),
+    (call_script, "script_pendor_on_agent_kill", ":dead_agent_no", ":killer_agent_no"),
 
-        #check if agents valid/if player disconnects
-        (ge, ":dead_agent_no", 0),
-        (ge, ":killer_agent_no", 0),
-
-        (dict_create, "$pendor_player_stats_dict"),
-        #player dies
-        (try_begin),
-            (neg|agent_is_non_player, ":dead_agent_no"),
-            (agent_get_player_id, ":player_id", ":dead_agent_no"),
-
-            (str_store_player_username, s30, ":player_id"),  
-            (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
-            
-            (dict_get_int, ":cur_player_deaths", "$pendor_player_stats_dict", "@{s30}_Deaths", 0),
-            (store_add, ":updated_player_deaths", ":cur_player_deaths", 1), 
-            (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Deaths", ":updated_player_deaths"),
-            (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
-
-        (try_end),
-
-        #player kills 
-        (try_begin),
-            (neg|agent_is_non_player, ":killer_agent_no"),
-            (agent_get_player_id, ":player_id", ":killer_agent_no"),
-
-            #handle friendly fire
-            (agent_get_team, ":dead_agent_team", ":dead_agent_no"),
-            (agent_get_team, ":killer_agent_team", ":killer_agent_no"),
-            (assign, ":kill_score", 1),
-            (try_begin),
-                (eq, ":dead_agent_team", ":killer_agent_team"),
-                (assign, ":kill_score", -1),
-            (try_end),
-
-            (str_store_player_username, s30, ":player_id"),
-            (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
-            
-            (dict_get_int, ":cur_player_kills", "$pendor_player_stats_dict", "@{s30}_Kills", 0),
-            (store_add, ":updated_player_kills", ":cur_player_kills", ":kill_score"), 
-            (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Kills", ":updated_player_kills"),
-            (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
-
-        (try_end),
-        (dict_free, "$pendor_player_stats_dict"),
-    (try_end),
     ]),	
 
   # 
@@ -3076,7 +3015,6 @@ coop_scripts = [
     (try_end),
 
     (dict_set_int, "$coop_dict", "@hero_num", reg22),
-    #PENDOR custom
     (dict_set_int, "$coop_dict", "@troops_num", reg24),
 
     (call_script, "script_coop_copy_hero_to_file"), 
@@ -3086,53 +3024,9 @@ coop_scripts = [
     (display_message, "@Battle setup complete."),
     
     #PENDOR - set up players' stats dict
-    (dict_create, "$pendor_player_stats_dict"),
-    
-    (str_store_party_name, s2, "p_main_party"),
-    (str_store_party_name, s3, "$coop_encountered_party"),
-   
-    (call_script, "script_coop_get_scene_name", ":scene_to_use"),
-    
-    (try_begin),
-        (this_or_next|eq, "$coop_battle_type", coop_battle_type_siege_player_attack),
-        (eq, "$coop_battle_type", coop_battle_type_village_player_attack),
-        (str_store_string, s4, "@Attacking {s3}"),
-    (else_try),
-        (this_or_next|eq, "$coop_battle_type", coop_battle_type_siege_player_defend),
-        (eq, "$coop_battle_type", coop_battle_type_village_player_defend),
-        (party_get_battle_opponent, ":defending_town", "$coop_encountered_party"),
-        (str_store_party_name, s5, ":defending_town"),
-        (str_store_string, s4, "@Defending {s5} against {s3}"),
-    (try_end),
-
-    (try_begin),
-        (str_equals, s0, "@Unknown"),
-
-        (assign, ":closest_town", towns_begin),
-        (assign, ":closest_distance", 999999),
-        (assign, ":distance", 0),
-        (party_get_position, pos50, "p_main_party"),
-        (try_for_range, ":town_id", towns_begin, villages_end),
-            (party_get_position, pos51, ":town_id"),
-            (get_sq_distance_between_positions_in_meters, ":distance", pos50, pos51),
-            (try_begin),
-                (gt, ":closest_distance", ":distance"),
-                (assign, ":closest_distance", ":distance"),
-                (assign, ":closest_town", ":town_id"),
-            (try_end),
-        (try_end),
-
-        (str_store_party_name, s0, ":closest_town"),
-        (str_store_string, s4, "@{s3} near {s0}"),
-    (try_end),
-    
-    (dict_set_str, "$pendor_player_stats_dict", "@Battle", "@{s4}"), #removed s2, the player party name - it's redundant if only one person is hosting
-
-    (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
-    (dict_free, "$pendor_player_stats_dict"),
+    (call_script, "script_pendor_set_battle_name", ":scene_to_use"),
 
     (try_end),
-
     ]),	
 
 
@@ -3511,20 +3405,8 @@ coop_scripts = [
     (dict_free, "$coop_dict"),
 
     #PENDOR - upload players' stats
-    (dict_create, "$pendor_player_stats_dict"),
-    (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
-    (dict_get_size, reg32, "$pendor_player_stats_dict"),
-    (try_begin),
-        (gt, reg32, 1),
-        (dict_set_str, "$pendor_player_stats_dict", "@Result", s32),
-        (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
-        (dict_free, "$pendor_player_stats_dict"),
-        (call_script, "script_pendor_post_stats"),
-    (else_try),
-        (display_message, "@No player stats to upload!"),
-    (try_end),
-
-
+    #use s32 for battle result name
+    (call_script, "script_pendor_set_battle_result_and_upload_stats"),
 
     (try_end),
     ]),	
@@ -3924,6 +3806,72 @@ coop_scripts = [
     (try_end),
     ]),	 
 
+    ("pendor_set_battle_name", [
+        (store_script_param, ":scene_to_use", 1),
+        (dict_create, "$pendor_player_stats_dict"),
+        
+        (str_store_party_name, s2, "p_main_party"),
+        (str_store_party_name, s3, "$coop_encountered_party"),
+      
+        (call_script, "script_coop_get_scene_name", ":scene_to_use"),
+        
+        (try_begin),
+            (this_or_next|eq, "$coop_battle_type", coop_battle_type_siege_player_attack),
+            (eq, "$coop_battle_type", coop_battle_type_village_player_attack),
+            (str_store_string, s4, "@Attacking {s3}"),
+        (else_try),
+            (this_or_next|eq, "$coop_battle_type", coop_battle_type_siege_player_defend),
+            (eq, "$coop_battle_type", coop_battle_type_village_player_defend),
+            (party_get_battle_opponent, ":defending_town", "$coop_encountered_party"),
+            (str_store_party_name, s5, ":defending_town"),
+            (str_store_string, s4, "@Defending {s5} against {s3}"),
+        (try_end),
+    
+        (try_begin),
+            (str_equals, s0, "@Unknown"),
+    
+            (assign, ":closest_town", towns_begin),
+            (assign, ":closest_distance", 999999),
+            (assign, ":distance", 0),
+            (party_get_position, pos50, "p_main_party"),
+            (try_for_range, ":town_id", towns_begin, villages_end),
+                (party_get_position, pos51, ":town_id"),
+                (get_sq_distance_between_positions_in_meters, ":distance", pos50, pos51),
+                (try_begin),
+                    (gt, ":closest_distance", ":distance"),
+                    (assign, ":closest_distance", ":distance"),
+                    (assign, ":closest_town", ":town_id"),
+                (try_end),
+            (try_end),
+    
+            (str_store_party_name, s0, ":closest_town"),
+            (str_store_string, s4, "@{s3} near {s0}"),
+        (try_end),
+        
+        (dict_set_str, "$pendor_player_stats_dict", "@Battle", "@{s4}"), #removed s2, the player party name - it's redundant if only one person is hosting
+    
+        (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+        (dict_free, "$pendor_player_stats_dict"),
+    ]),
+
+    ("pendor_set_initial_player_stats", [
+        (store_script_param, ":player_no", 1),
+        # Create intitial k/d for pendor players' stats
+        (dict_create, "$pendor_player_stats_dict"),
+        (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+        (str_store_player_username, s30, ":player_no"),
+        (try_begin),    
+            (neg|dict_has_key, "$pendor_player_stats_dict", "@{s30}_Kills"),
+            (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Kills", 0),
+        (try_end),
+        (try_begin),    
+            (neg|dict_has_key, "$pendor_player_stats_dict", "@{s30}_Deaths"),
+            (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Deaths", 0),
+        (try_end),   
+        (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+        (dict_free, "$pendor_player_stats_dict"),
+    ]),
+
     ("pendor_add_bot_totals", [
         (store_script_param, ":total_allies", 1),
         (store_script_param, ":total_enemies", 2),
@@ -3956,24 +3904,96 @@ coop_scripts = [
         (try_end),
     ]),
 
-    ("pendor_post_message_callback", [
+    ("pendor_on_agent_kill", [
+        (store_script_param, ":dead_agent_no", 1),
+        (store_script_param, ":killer_agent_no", 2),
         (try_begin),
-            (display_debug_message, s0),
-            (str_equals, s0, "@Success"),
-            (display_message, "@Stats Updated!"),   
-        (else_try),
-            (display_message, "@POST callback failed..."),
+            #only host reports
+            (multiplayer_is_server),
+            (agent_is_human, ":dead_agent_no"),
+
+            #check if agents valid/if player disconnects
+            (ge, ":dead_agent_no", 0),
+            (ge, ":killer_agent_no", 0),
+
+            (dict_create, "$pendor_player_stats_dict"),
+            #player dies
+            (try_begin),
+                (neg|agent_is_non_player, ":dead_agent_no"),
+                (agent_get_player_id, ":player_id", ":dead_agent_no"),
+
+                (str_store_player_username, s30, ":player_id"),  
+                (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+                
+                (dict_get_int, ":cur_player_deaths", "$pendor_player_stats_dict", "@{s30}_Deaths", 0),
+                (store_add, ":updated_player_deaths", ":cur_player_deaths", 1), 
+                (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Deaths", ":updated_player_deaths"),
+                (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+
+            (try_end),
+
+            #player kills 
+            (try_begin),
+                (neg|agent_is_non_player, ":killer_agent_no"),
+                (agent_get_player_id, ":player_id", ":killer_agent_no"),
+
+                #handle friendly fire
+                (agent_get_team, ":dead_agent_team", ":dead_agent_no"),
+                (agent_get_team, ":killer_agent_team", ":killer_agent_no"),
+                (assign, ":kill_score", 1),
+                (try_begin),
+                    (eq, ":dead_agent_team", ":killer_agent_team"),
+                    (assign, ":kill_score", -1),
+                (try_end),
+
+                (str_store_player_username, s30, ":player_id"),
+                (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+                
+                (dict_get_int, ":cur_player_kills", "$pendor_player_stats_dict", "@{s30}_Kills", 0),
+                (store_add, ":updated_player_kills", ":cur_player_kills", ":kill_score"), 
+                (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Kills", ":updated_player_kills"),
+                (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+
+            (try_end),
+            (dict_free, "$pendor_player_stats_dict"),
         (try_end),
     ]),
 
-    ("pendor_post_message_failed", [
-        (display_message, "@Failed to upload player stats! Check if python server is running"),
-    ]),   
+    ("pendor_set_battle_result_and_upload_stats", [
+        #Use s32 for battle result before calling this script
+        (dict_create, "$pendor_player_stats_dict"),
+        (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+        (dict_get_size, reg32, "$pendor_player_stats_dict"),
+        (try_begin),
+            (gt, reg32, 1),
+            (dict_set_str, "$pendor_player_stats_dict", "@Result", s32),
+            (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+            (dict_free, "$pendor_player_stats_dict"),
+            (call_script, "script_pendor_post_stats"),
+        (else_try),
+            (display_message, "@No player stats to upload!"),
+        (try_end),
+    ]),
 
     ("pendor_post_stats", [
         (display_message, "@Uploading player stats..."),
         (str_store_string, s31, "@localhost"),
         (send_post_message_to_url_advanced, s31, "@Battletime", "@", "script_pendor_post_message_callback", "script_pendor_post_message_failed", 1, 10000),
     ]),
+
+
+    ("pendor_post_message_callback", [
+        (try_begin),
+            (display_debug_message, s0),
+            (str_equals, s0, "@Success"),
+            (display_message, "@Stats Updated!"),   
+        (else_try),
+            (display_message, "@POST callback failed... Check python server console"),
+        (try_end),
+    ]),
+
+    ("pendor_post_message_failed", [
+        (display_message, "@Failed to upload player stats! Check if python server is running"),
+    ]),   
 
 ]
