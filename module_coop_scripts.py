@@ -3799,9 +3799,9 @@ coop_scripts = [
           (troop_set_name, ":cur_troop", s0),
       
           (try_begin),#only copy inventory to SP when optional
-            #(this_or_next|game_in_multiplayer_mode), 
-            #(eq, "$coop_disable_inventory", 0),
-            #disable these two checks above to allow inventory access without overwriting heros' equipment
+            (this_or_next|game_in_multiplayer_mode), 
+            (eq, "$coop_disable_inventory", 0),
+            #REENABLED - disable these two checks above to allow inventory access without overwriting heros' equipment
 
             (game_in_multiplayer_mode),
             (try_for_range, reg20, ek_item_0, ek_food), 
