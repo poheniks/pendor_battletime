@@ -1,4 +1,4 @@
-3305
+3311
 qstr_Next_Page Next_Page
 qstr_Co_op_Admin_Panel Co-op_Admin_Panel
 qstr_Game_Rules:^ Game_Rules:^
@@ -1700,15 +1700,15 @@ qstr_Sea_Raider_Landing Sea_Raider_Landing
 qstr_Number_of_troops_on_ Number_of_troops_on_team_{reg1}:
 qstr_Time_of_day: Time_of_day:
 qstr_Recieved_Scene_Data. Recieved_Scene_Data.
+qstr_pendor_player_stats pendor_player_stats
+qstr_{s30}_Kills {s30}_Kills
+qstr_{s30}_Deaths {s30}_Deaths
 qstr_Trade_failed. Trade_failed.
 qstr_none none
 qstr_{s41}_traded_{s42}_f {s41}_traded_{s42}_for_{s40}.
 qstr_{s40}_has_picked_{s4 {s40}_has_picked_{s41}._
 qstr_Battle_result_saved. Battle_result_saved.
 qstr_You_got_{reg1}_exper You_got_{reg1}_experience.
-qstr_pendor_player_stats pendor_player_stats
-qstr_{s30}_Deaths {s30}_Deaths
-qstr_{s30}_Kills {s30}_Kills
 qstr_num_parties_enemy num_parties_enemy
 qstr_p_enemy{reg20}_banne p_enemy{reg20}_banner
 qstr_p_enemy{reg20}_party p_enemy{reg20}_partyid
@@ -1780,6 +1780,12 @@ qstr_player_inv_mgt player_inv_mgt
 qstr_party_inv{reg20}_itm party_inv{reg20}_itm
 qstr_party_inv{reg20}_imd party_inv{reg20}_imd
 qstr_Player Player
+qstr_Number_of_Allies Number_of_Allies
+qstr_Number_of_Enemies Number_of_Enemies
+qstr_Allied_Bot_Kills Allied_Bot_Kills
+qstr_Allied_Bot_Deaths Allied_Bot_Deaths
+qstr_Enemy_Kills Enemy_Kills
+qstr_Enemy_Deaths Enemy_Deaths
 qstr_Success Success
 qstr_Stats_Updated! Stats_Updated!
 qstr_POST_callback_failed POST_callback_failed...

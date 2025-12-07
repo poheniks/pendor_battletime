@@ -724,6 +724,21 @@ coop_scripts = [
   ("coop_server_player_joined_common",
    [
     (store_script_param, ":player_no", 1),
+    
+    # Create intitial k/d for pendor players' stats
+    (dict_create, "$pendor_player_stats_dict"),
+    (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+    (str_store_player_username, s30, ":player_no"),
+    (try_begin),    
+        (neg|dict_has_key, "$pendor_player_stats_dict", "@{s30}_Kills"),
+        (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Kills", 0),
+    (try_end),
+    (try_begin),    
+        (neg|dict_has_key, "$pendor_player_stats_dict", "@{s30}_Deaths"),
+        (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Deaths", 0),
+    (try_end),   
+    (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+    (dict_free, "$pendor_player_stats_dict"),
 
     (try_begin),
       (gt, ":player_no", 0), #dont send stats to server
@@ -2601,12 +2616,6 @@ coop_scripts = [
             (str_store_player_username, s30, ":player_id"),
             (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
             
-            (try_begin),
-                (neg|dict_has_key, "$pendor_player_stats_dict", "@{s30}_Deaths"),
-                (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Deaths", 0),
-            (try_end),
-
-
             (dict_get_int, ":cur_player_kills", "$pendor_player_stats_dict", "@{s30}_Kills", 0),
             (store_add, ":updated_player_kills", ":cur_player_kills", ":kill_score"), 
             (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Kills", ":updated_player_kills"),
@@ -3118,6 +3127,7 @@ coop_scripts = [
     (try_end),
     
     (dict_set_str, "$pendor_player_stats_dict", "@Battle", "@{s4}"), #removed s2, the player party name - it's redundant if only one person is hosting
+
     (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
     (dict_free, "$pendor_player_stats_dict"),
 
@@ -3219,6 +3229,8 @@ coop_scripts = [
       (try_end), #end ally parties
       # (troop_set_slot, "trp_temp_array_b", 100, ":cur_slot"),# slot 100 = 100 + number heroes + 1
       (assign, "$coop_num_bots_team_2", ":total_ally_troops"), #count troops in battle
+    
+    (call_script, "script_pendor_add_bot_totals", ":total_ally_troops", ":total_enemy_troops"),    
 
     (try_end),
 
@@ -3234,6 +3246,9 @@ coop_scripts = [
    [
     (try_begin), 
       (neg|is_vanilla_warband),
+
+      (call_script, "script_pendor_add_bot_stats"),
+
       (dict_create, "$coop_dict"),
       (dict_load_file, "$coop_dict", "@coop_battle", 2),
 
@@ -3503,7 +3518,7 @@ coop_scripts = [
         (gt, reg32, 1),
         (dict_set_str, "$pendor_player_stats_dict", "@Result", s32),
         (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
-
+        (dict_free, "$pendor_player_stats_dict"),
         (call_script, "script_pendor_post_stats"),
     (else_try),
         (display_message, "@No player stats to upload!"),
@@ -3908,7 +3923,39 @@ coop_scripts = [
 
     (try_end),
     ]),	 
-     
+
+    ("pendor_add_bot_totals", [
+        (store_script_param, ":total_allies", 1),
+        (store_script_param, ":total_enemies", 2),
+        (dict_create, "$pendor_player_stats_dict"),
+        (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+        (dict_set_int, "$pendor_player_stats_dict", "@Number of Allies", ":total_allies"),
+        (dict_set_int, "$pendor_player_stats_dict", "@Number of Enemies", ":total_enemies"),
+        (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+        (dict_free, "$pendor_player_stats_dict"),
+    ]),
+
+    ("pendor_add_bot_stats", [
+        (try_begin),
+            (game_in_multiplayer_mode),
+            (dict_create, "$pendor_player_stats_dict"),
+            (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+            
+            (team_get_bot_kill_count, ":allied_bot_kills", 1),
+            (team_get_bot_death_count, ":allied_bot_deaths", 1),
+            (team_get_bot_kill_count, ":enemy_bot_kills", 0),
+            (team_get_bot_death_count, ":enemy_bot_deaths", 0),
+            
+            (dict_set_int, "$pendor_player_stats_dict", "@Allied Bot Kills", ":allied_bot_kills"),
+            (dict_set_int, "$pendor_player_stats_dict", "@Allied Bot Deaths", ":allied_bot_deaths"),
+            (dict_set_int, "$pendor_player_stats_dict", "@Enemy Kills", ":enemy_bot_kills"),
+            (dict_set_int, "$pendor_player_stats_dict", "@Enemy Deaths", ":enemy_bot_deaths"),
+            
+            (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+            (dict_free, "$pendor_player_stats_dict"),
+        (try_end),
+    ]),
+
     ("pendor_post_message_callback", [
         (try_begin),
             (display_debug_message, s0),

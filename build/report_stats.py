@@ -2,6 +2,7 @@ import requests
 import json
 import platform
 import os
+from datetime import datetime
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from requests.models import Response
 
@@ -79,6 +80,7 @@ def getPayload() -> str:
     try: 
         payloadFile = open(payloadLocation, "r")
         payload: str = json.load(payloadFile)
+        payload["Time"] = datetime.now().strftime("%x, %X")
     except Exception as e:
         payload = ""
     
@@ -119,10 +121,8 @@ class handler(BaseHTTPRequestHandler):
             if stats_post_callback == "":
                 stats_post_callback = "Upload failed! Check if payload exists and the POST url is correct"
 
-            #stats_post_callback = stats_post_callback.replace(" ", "&&") #warband will crash if it reads spaces
-
             print(stats_post_callback)
-            archivePayload();
+            #archivePayload();
             _ = self.wfile.write(bytes(stats_post_callback, "utf-8"))
 
         except Exception as e: 

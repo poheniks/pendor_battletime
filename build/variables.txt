@@ -1559,6 +1559,7 @@ coop_reduce_damage
 coop_no_capture_heroes
 coop_string_received
 coop_class_string_received
+pendor_player_stats_dict
 coop_last_hero_received
 coop_agent_banner
 coop_form_line_grp_1
@@ -1569,6 +1570,5 @@ coop_form_line_grp_5
 coop_form_line_grp_6
 coop_form_line_last_pos
 coop_agent_party
-pendor_player_stats_dict
 coop_no_enemy_parties
 coop_no_ally_parties
