@@ -1297,7 +1297,7 @@ items = [
       (particle_system_burst, "psys_pistol_smoke", pos1, 15),
     ]),
    ]],
-   ["blunderbus","Blunderbus", [("handgonne_chis_d", 0)], itp_type_musket|itp_cant_reload_on_horseback|itp_two_handed|itp_primary|itp_cant_use_on_horseback|itp_ignore_gravity|itp_cant_reload_while_moving_mounted, itcf_shoot_musket|itcf_carry_crossbow_back|itcf_reload_musket,8000, weight(5.5)|abundance(1)|accuracy(88)|spd_rtng(45)|shoot_speed(150)|max_ammo(1)|thrust_damage(50, pierce), imodbits_crossbow|imodbit_fine, [
+   ["blunderbus","Blunderbus", [("handgonne_chis_d", 0)], itp_type_musket|itp_cant_reload_on_horseback|itp_two_handed|itp_primary|itp_cant_use_on_horseback|itp_ignore_gravity|itp_cant_reload_while_moving_mounted, itcf_shoot_musket|itcf_carry_crossbow_back|itcf_reload_musket,8000, weight(5.5)|abundance(1)|accuracy(98)|spd_rtng(49)|shoot_speed(150)|max_ammo(1)|thrust_damage(75, pierce), imodbits_crossbow|imodbit_fine, [
     (ti_on_weapon_attack,[
     (store_trigger_param_1,reg1),#Get the attacker Agent for add_missile
     (try_for_range, ":unused", 1, 6),
@@ -1961,7 +1961,7 @@ items = [
   ["ranger_armour","Ranger_Armour", [("gondor_faramir", 0)], itp_type_body_armor|itp_covers_legs|itp_doesnt_cover_hair|itp_civilian, 0,1505, weight(5)|abundance(6)|head_armor(1)|body_armor(36)|leg_armor(19)|difficulty(10), imodbits_cloth|imodbit_rough|imodbit_superb, []],
   ["chunk_armour","Chunk_Plate_armour", [("zhongjia_1", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(41)|abundance(5)|head_armor(4)|body_armor(60)|leg_armor(25)|difficulty(18), imodbits_armor|imodbit_old|imodbit_superb, []],
   ["chonk_armour","Chonk_Plate_armour", [("hm_arm_masW", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(39)|abundance(5)|head_armor(5)|body_armor(69)|leg_armor(29)|difficulty(21), imodbits_armor|imodbit_old|imodbit_superb, []],
-  ["tsy_armour","Tsy_Chonk_Plate_armour", [("hm_arm_masW", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(34)|abundance(5)|head_armor(6)|body_armor(72)|leg_armor(32)|difficulty(34), imodbits_armor|imodbit_old|imodbit_superb, []],
+  ["tsy_armour","Tsy_Chonk_Plate_armour", [("hm_arm_masW", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(30)|abundance(5)|head_armor(6)|body_armor(72)|leg_armor(32)|difficulty(24), imodbits_armor|imodbit_old|imodbit_superb, []],
   ["plume_armour","Exotic_Knight_Plate", [("maximilian_armour", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(22)|abundance(5)|head_armor(3)|body_armor(62)|leg_armor(22)|difficulty(15), imodbits_armor|imodbit_old|imodbit_superb, []],
   ["tetsu_armour","Black_Exotic_Knight_Plate", [("maximilian_armour_1", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(13)|abundance(5)|head_armor(2)|body_armor(64)|leg_armor(24)|difficulty(21), imodbits_armor|imodbit_old|imodbit_superb, []],
   ["handgonne_armour","Handgonne_Plate", [("cuirass_on_mail_chis", 0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_doesnt_cover_hair, 0,11395, weight(18)|abundance(5)|head_armor(2)|body_armor(60)|leg_armor(20)|difficulty(15), imodbits_armor|imodbit_old|imodbit_superb, []],
