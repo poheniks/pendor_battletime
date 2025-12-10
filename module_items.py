@@ -1297,7 +1297,7 @@ items = [
       (particle_system_burst, "psys_pistol_smoke", pos1, 15),
     ]),
    ]],
-   ["blunderbus","Blunderbus", [("handgonne_chis_d", 0)], itp_type_musket|itp_cant_reload_on_horseback|itp_two_handed|itp_primary|itp_cant_use_on_horseback|itp_ignore_gravity|itp_cant_reload_while_moving_mounted, itcf_shoot_musket|itcf_carry_crossbow_back|itcf_reload_musket,8000, weight(5.5)|abundance(1)|accuracy(88)|spd_rtng(45)|shoot_speed(150)|max_ammo(1)|thrust_damage(50, pierce), imodbits_crossbow|imodbit_fine, [
+   ["blunderbus","Blunderbus", [("handgonne_chis_d", 0)], itp_type_musket|itp_cant_reload_on_horseback|itp_two_handed|itp_primary|itp_cant_use_on_horseback|itp_ignore_gravity|itp_cant_reload_while_moving_mounted, itcf_shoot_musket|itcf_carry_crossbow_back|itcf_reload_musket,8000, weight(5.5)|abundance(1)|accuracy(98)|spd_rtng(49)|shoot_speed(150)|max_ammo(1)|thrust_damage(75, pierce), imodbits_crossbow|imodbit_fine, [
     (ti_on_weapon_attack,[
     (store_trigger_param_1,reg1),#Get the attacker Agent for add_missile
     (try_for_range, ":unused", 1, 6),
