@@ -1,4 +1,4 @@
-3311
+3315
 qstr_Next_Page Next_Page
 qstr_Co_op_Admin_Panel Co-op_Admin_Panel
 qstr_Game_Rules:^ Game_Rules:^
@@ -1776,14 +1776,18 @@ qstr_{s3}_near_{s0} {s3}_near_{s0}
 qstr_Battle Battle
 qstr_{s4} {s4}
 qstr_pendor_player_stats pendor_player_stats
-qstr_{s30}_Kills {s30}_Kills
-qstr_{s30}_Deaths {s30}_Deaths
-qstr_Number_of_Allies Number_of_Allies
-qstr_Number_of_Enemies Number_of_Enemies
-qstr_Allied_Bot_Kills Allied_Bot_Kills
-qstr_Allied_Bot_Deaths Allied_Bot_Deaths
-qstr_Enemy_Kills Enemy_Kills
-qstr_Enemy_Deaths Enemy_Deaths
+qstr_!Main_{s30}_Kills !Main_{s30}_Kills
+qstr_!Main_{s30}_Deaths !Main_{s30}_Deaths
+qstr_!Main_Number_of_Alli !Main_Number_of_Allies
+qstr_!Main_Number_of_Enem !Main_Number_of_Enemies
+qstr_!Troops !Troops
+qstr_!Heroes !Heroes
+qstr_{s35}_{s33}_Deaths {s35}_{s33}_Deaths
+qstr_{s36}_{s34}_Kills {s36}_{s34}_Kills
+qstr_!Main_Allied_Bot_Dea !Main_Allied_Bot_Deaths
+qstr_!Main_Enemy_Deaths !Main_Enemy_Deaths
+qstr_!Main_Allied_Bot_Kil !Main_Allied_Bot_Kills
+qstr_!Main_Enemy_Kills !Main_Enemy_Kills
 qstr_Result Result
 qstr_No_player_stats_to_u No_player_stats_to_upload!
 qstr_Uploading_player_sta Uploading_player_stats...

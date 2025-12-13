@@ -3141,7 +3141,7 @@ coop_scripts = [
     (try_begin), 
       (neg|is_vanilla_warband),
 
-      (call_script, "script_pendor_add_bot_stats"),
+      #(call_script, "script_pendor_add_bot_stats"),
 
       (dict_create, "$coop_dict"),
       (dict_load_file, "$coop_dict", "@coop_battle", 2),
@@ -3861,12 +3861,12 @@ coop_scripts = [
         (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
         (str_store_player_username, s30, ":player_no"),
         (try_begin),    
-            (neg|dict_has_key, "$pendor_player_stats_dict", "@{s30}_Kills"),
-            (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Kills", 0),
+            (neg|dict_has_key, "$pendor_player_stats_dict", "@!Main {s30} Kills"),
+            (dict_set_int, "$pendor_player_stats_dict", "@!Main {s30} Kills", 0),
         (try_end),
         (try_begin),    
-            (neg|dict_has_key, "$pendor_player_stats_dict", "@{s30}_Deaths"),
-            (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Deaths", 0),
+            (neg|dict_has_key, "$pendor_player_stats_dict", "@!Main {s30} Deaths"),
+            (dict_set_int, "$pendor_player_stats_dict", "@!Main {s30} Deaths", 0),
         (try_end),   
         (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
         (dict_free, "$pendor_player_stats_dict"),
@@ -3877,31 +3877,10 @@ coop_scripts = [
         (store_script_param, ":total_enemies", 2),
         (dict_create, "$pendor_player_stats_dict"),
         (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
-        (dict_set_int, "$pendor_player_stats_dict", "@Number of Allies", ":total_allies"),
-        (dict_set_int, "$pendor_player_stats_dict", "@Number of Enemies", ":total_enemies"),
+        (dict_set_int, "$pendor_player_stats_dict", "@!Main Number of Allies", ":total_allies"),
+        (dict_set_int, "$pendor_player_stats_dict", "@!Main Number of Enemies", ":total_enemies"),
         (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
         (dict_free, "$pendor_player_stats_dict"),
-    ]),
-
-    ("pendor_add_bot_stats", [
-        (try_begin),
-            (game_in_multiplayer_mode),
-            (dict_create, "$pendor_player_stats_dict"),
-            (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
-            
-            (team_get_bot_kill_count, ":allied_bot_kills", 1),
-            (team_get_bot_death_count, ":allied_bot_deaths", 1),
-            (team_get_bot_kill_count, ":enemy_bot_kills", 0),
-            (team_get_bot_death_count, ":enemy_bot_deaths", 0),
-            
-            (dict_set_int, "$pendor_player_stats_dict", "@Allied Bot Kills", ":allied_bot_kills"),
-            (dict_set_int, "$pendor_player_stats_dict", "@Allied Bot Deaths", ":allied_bot_deaths"),
-            (dict_set_int, "$pendor_player_stats_dict", "@Enemy Kills", ":enemy_bot_kills"),
-            (dict_set_int, "$pendor_player_stats_dict", "@Enemy Deaths", ":enemy_bot_deaths"),
-            
-            (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
-            (dict_free, "$pendor_player_stats_dict"),
-        (try_end),
     ]),
 
     ("pendor_on_agent_kill", [
@@ -3916,20 +3895,29 @@ coop_scripts = [
             (ge, ":dead_agent_no", 0),
             (ge, ":killer_agent_no", 0),
 
+             #handle friendly fire
+            (agent_get_team, ":dead_agent_team", ":dead_agent_no"),
+            (agent_get_team, ":killer_agent_team", ":killer_agent_no"),
+            (assign, ":kill_score", 1),
+            (try_begin),
+                (eq, ":dead_agent_team", ":killer_agent_team"),
+                (assign, ":kill_score", -1),
+            (try_end),
+
             (dict_create, "$pendor_player_stats_dict"),
+            (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
+            (call_script, "script_pendor_add_troop_stats", ":dead_agent_no", ":killer_agent_no", ":kill_score"),
+
             #player dies
             (try_begin),
                 (neg|agent_is_non_player, ":dead_agent_no"),
                 (agent_get_player_id, ":player_id", ":dead_agent_no"),
 
                 (str_store_player_username, s30, ":player_id"),  
-                (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
                 
-                (dict_get_int, ":cur_player_deaths", "$pendor_player_stats_dict", "@{s30}_Deaths", 0),
+                (dict_get_int, ":cur_player_deaths", "$pendor_player_stats_dict", "@!Main {s30} Deaths", 0),
                 (store_add, ":updated_player_deaths", ":cur_player_deaths", 1), 
-                (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Deaths", ":updated_player_deaths"),
-                (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
-
+                (dict_set_int, "$pendor_player_stats_dict", "@!Main {s30} Deaths", ":updated_player_deaths"),
             (try_end),
 
             #player kills 
@@ -3937,25 +3925,84 @@ coop_scripts = [
                 (neg|agent_is_non_player, ":killer_agent_no"),
                 (agent_get_player_id, ":player_id", ":killer_agent_no"),
 
-                #handle friendly fire
-                (agent_get_team, ":dead_agent_team", ":dead_agent_no"),
-                (agent_get_team, ":killer_agent_team", ":killer_agent_no"),
-                (assign, ":kill_score", 1),
-                (try_begin),
-                    (eq, ":dead_agent_team", ":killer_agent_team"),
-                    (assign, ":kill_score", -1),
-                (try_end),
-
                 (str_store_player_username, s30, ":player_id"),
-                (dict_load_file_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
                 
-                (dict_get_int, ":cur_player_kills", "$pendor_player_stats_dict", "@{s30}_Kills", 0),
+                (dict_get_int, ":cur_player_kills", "$pendor_player_stats_dict", "@!Main {s30} Kills", 0),
                 (store_add, ":updated_player_kills", ":cur_player_kills", ":kill_score"), 
-                (dict_set_int, "$pendor_player_stats_dict", "@{s30}_Kills", ":updated_player_kills"),
-                (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
-
+                (dict_set_int, "$pendor_player_stats_dict", "@!Main {s30} Kills", ":updated_player_kills"),
             (try_end),
+
+            (dict_save_json, "$pendor_player_stats_dict", "@pendor_player_stats"),
             (dict_free, "$pendor_player_stats_dict"),
+        (try_end),
+    ]),
+    
+    ("pendor_add_troop_stats", [
+        (store_script_param, ":dead_agent_no", 1),
+        (store_script_param, ":killer_agent_no", 2),
+        (store_script_param, ":kill_score", 3),
+
+        (agent_get_troop_id, ":dead_troop_id", ":dead_agent_no"),
+        (agent_get_troop_id, ":killer_troop_id", ":killer_agent_no"),
+
+        (str_store_troop_name, s33, ":dead_troop_id"),
+        (str_store_troop_name, s34, ":killer_troop_id"),
+
+        #dead troop
+        (str_store_string, s35, "@!Troops"),
+        (try_begin),
+            (troop_is_hero, ":dead_troop_id"),
+            (str_store_string, s35, "@!Heroes"),
+        (try_end),
+
+        #killer troop
+        (str_store_string, s36, "@!Troops"),
+        (try_begin),
+            (troop_is_hero, ":killer_troop_id"),
+            (str_store_string, s36, "@!Heroes"),
+        (try_end),
+
+        (dict_get_int, ":cur_troop_deaths", "$pendor_player_stats_dict", "@{s35} {s33} Deaths", 0),
+        (store_add, ":updated_troop_deaths", ":cur_troop_deaths", 1),
+        (dict_set_int, "$pendor_player_stats_dict", "@{s35} {s33} Deaths", ":updated_troop_deaths"),
+
+        (dict_get_int, ":cur_troop_kills", "$pendor_player_stats_dict", "@{s36} {s34} Kills", 0),
+        (store_add, ":updated_troop_kills", ":cur_troop_kills", ":kill_score"),
+        (dict_set_int, "$pendor_player_stats_dict", "@{s36} {s34} Kills", ":updated_troop_kills"),
+
+        (agent_get_team, ":dead_agent_team", ":dead_agent_no"), 
+        (agent_get_team, ":killer_agent_team", ":killer_agent_no"),
+
+        #player team = 1
+        #enemy team = 0
+        (try_begin),
+            (agent_is_non_player, ":dead_agent_no"),
+            (try_begin),
+                (eq, ":dead_agent_team", 1),
+                (dict_get_int, ":cur_allied_bot_deaths", "$pendor_player_stats_dict", "@!Main Allied Bot Deaths"), 
+                (store_add, ":updated_allied_bot_deaths", ":cur_allied_bot_deaths", 1),
+                (dict_set_int, "$pendor_player_stats_dict", "@!Main Allied Bot Deaths", ":updated_allied_bot_deaths"),
+            (else_try),
+                (eq, ":dead_agent_team", 0),
+                (dict_get_int, ":cur_enemy_bot_deaths", "$pendor_player_stats_dict", "@!Main Enemy Deaths"), 
+                (store_add, ":updated_enemy_bot_deaths", ":cur_enemy_bot_deaths", 1),
+                (dict_set_int, "$pendor_player_stats_dict", "@!Main Enemy Deaths", ":updated_enemy_bot_deaths"),
+            (try_end),
+        (try_end),
+        
+        (try_begin),
+            (agent_is_non_player, ":killer_agent_no"),
+            (try_begin),
+                (eq, ":killer_agent_team", 1),
+                (dict_get_int, ":cur_allied_bot_kills", "$pendor_player_stats_dict", "@!Main Allied Bot Kills"), 
+                (store_add, ":updated_allied_bot_kills", ":cur_allied_bot_kills", 1),
+                (dict_set_int, "$pendor_player_stats_dict", "@!Main Allied Bot Kills", ":updated_allied_bot_kills"),
+            (else_try),
+                (eq, ":killer_agent_team", 0),
+                (dict_get_int, ":cur_enemy_bot_kills", "$pendor_player_stats_dict", "@!Main Enemy Kills"), 
+                (store_add, ":updated_enemy_bot_kills", ":cur_enemy_bot_kills", 1),
+                (dict_set_int, "$pendor_player_stats_dict", "@!Main Enemy Kills", ":updated_enemy_bot_kills"),
+            (try_end),
         (try_end),
     ]),
 
@@ -3978,7 +4025,7 @@ coop_scripts = [
     ("pendor_post_stats", [
         (display_message, "@Uploading player stats..."),
         (str_store_string, s31, "@localhost"),
-        (send_post_message_to_url_advanced, s31, "@Battletime", "@", "script_pendor_post_message_callback", "script_pendor_post_message_failed", 1, 10000),
+        (send_post_message_to_url_advanced, s31, "@Battletime", "@", "script_pendor_post_message_callback", "script_pendor_post_message_failed", 1, 20000),
     ]),
 
 

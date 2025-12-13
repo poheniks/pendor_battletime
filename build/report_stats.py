@@ -80,7 +80,7 @@ def getPayload() -> str:
     try: 
         payloadFile = open(payloadLocation, "r")
         payload: str = json.load(payloadFile)
-        payload["Time"] = datetime.now().strftime("%x, %X")
+        #payload["Time"] = datetime.now().strftime("%x, %X")
     except Exception as e:
         payload = ""
     
