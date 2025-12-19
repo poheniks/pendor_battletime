@@ -1,4 +1,4 @@
-3315
+3317
 qstr_Next_Page Next_Page
 qstr_Co_op_Admin_Panel Co-op_Admin_Panel
 qstr_Game_Rules:^ Game_Rules:^
@@ -1672,6 +1672,7 @@ qstr_tm0_fac tm0_fac
 qstr_tm1_fac tm1_fac
 qstr_cls{reg1}_name cls{reg1}_name
 qstr_Admin_panel_set. Admin_panel_set.
+qstr_pendor_player_stats pendor_player_stats
 qstr_srvr_set0 srvr_set0
 qstr_srvr_set2 srvr_set2
 qstr_srvr_set3 srvr_set3
@@ -1775,15 +1776,16 @@ qstr_Defending_{s5}_again Defending_{s5}_against_{s3}
 qstr_{s3}_near_{s0} {s3}_near_{s0}
 qstr_Battle Battle
 qstr_{s4} {s4}
-qstr_pendor_player_stats pendor_player_stats
 qstr_!Main_{s30}_Kills !Main_{s30}_Kills
 qstr_!Main_{s30}_Deaths !Main_{s30}_Deaths
 qstr_!Main_Number_of_Alli !Main_Number_of_Allies
 qstr_!Main_Number_of_Enem !Main_Number_of_Enemies
-qstr_!Troops !Troops
-qstr_!Heroes !Heroes
+qstr_!AllyTroops !AllyTroops
+qstr_!EnemyTroops !EnemyTroops
 qstr_{s35}_{s33}_Deaths {s35}_{s33}_Deaths
 qstr_{s36}_{s34}_Kills {s36}_{s34}_Kills
+qstr_!Heroes_{s33}_Deaths !Heroes_{s33}_Deaths
+qstr_!Heroes_{s34}_Kills !Heroes_{s34}_Kills
 qstr_!Main_Allied_Bot_Dea !Main_Allied_Bot_Deaths
 qstr_!Main_Enemy_Deaths !Main_Enemy_Deaths
 qstr_!Main_Allied_Bot_Kil !Main_Allied_Bot_Kills
@@ -1796,7 +1798,7 @@ qstr_Battletime Battletime
 qstr_Success Success
 qstr_Stats_Updated! Stats_Updated!
 qstr_POST_callback_failed POST_callback_failed..._Check_python_server_console
-qstr_Failed_to_upload_pla Failed_to_upload_player_stats!_Check_if_python_server_is_running
+qstr_Stats_upload_timed_o Stats_upload_timed_out..._Check_python_server_console
 qstr_You_ve_got_the_keys_ You've_got_the_keys_to_the_dungeon.
 qstr_You_have_escaped_fro You_have_escaped_from_the_fight_with_the_scribe,_talk_to_the_Ghost_Lady_again.
 qstr_You_have_been_knocke You_have_been_knocked_out_by_the_scribe,_talk_to_the_Ghost_Lady_again.

@@ -119,7 +119,7 @@ class handler(BaseHTTPRequestHandler):
             stats_post_callback: str
             stats_post_callback = post()
             if stats_post_callback == "":
-                stats_post_callback = "Upload failed! Check if payload exists and the POST url is correct"
+                stats_post_callback = "Failed"
 
             print(stats_post_callback)
             #archivePayload();
@@ -130,7 +130,7 @@ class handler(BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
-            _ = self.wfile.write(bytes("Upload failed! Check if payload exists and the POST url is correct", 'utf-8'))
+            _ = self.wfile.write(bytes("Failed", 'utf-8'))
 
 
 def main():

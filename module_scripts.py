@@ -31465,7 +31465,6 @@ scripts = [
     (assign, ":var2", -2),
     (assign, ":var3", 0),
     (try_for_range, ":var4", "trp_npc_adonja", "trp_kingdom_1_lord"),
-      (eq, 0, 1), #hardcoded disable npc complaints
       (neq, "$disable_npc_complaints", 2),
       (main_party_has_troop, ":var4"),
       (try_begin),
@@ -31539,7 +31538,6 @@ scripts = [
   ("post_battle_personality_clash_check",
   [
     (try_for_range, ":var0", "trp_npc_adonja", "trp_kingdom_1_lord"),
-      (eq, 0, 1), #hardcoded disable npc complaints
       (neq, "$disable_npc_complaints", 2),
       (main_party_has_troop, ":var0"),
       (neg|troop_is_wounded, ":var0"),
@@ -31554,7 +31552,6 @@ scripts = [
       (try_end),
     (try_end),
     (try_for_range, ":var0", "trp_npc_adonja", "trp_kingdom_1_lord"),
-      (eq, 0, 1), #hardcoded disable npc complaints
       (neq, "$disable_npc_complaints", 2),
       (troop_slot_eq, ":var0", 76, 0),
       (main_party_has_troop, ":var0"),
@@ -31565,7 +31562,6 @@ scripts = [
       (assign, "$npc_with_personality_match", ":var0"),
     (try_end),
     (try_begin),
-      (eq, 0, 1), #hardcoded disable npc complaints
       (neq, "$disable_npc_complaints", 2),
       (gt, "$npc_with_personality_clash_2", 0),
       (try_begin),
@@ -31591,7 +31587,6 @@ scripts = [
         (assign, "$npc_with_personality_clash_2", 0),
       (try_end),
     (else_try),
-      (eq, 0, 1), #hardcoded disable npc complaints
       (neq, "$disable_npc_complaints", 2),
       (gt, "$npc_with_personality_match", 0),
       (try_begin),
@@ -31614,7 +31609,6 @@ scripts = [
         (assign, "$npc_with_personality_match", 0),
       (try_end),
     (else_try),
-      (eq, 0, 1), #hardcoded disable npc complaints
       (neq, "$disable_npc_complaints", 2),
       (neq, "$g_option_companion_dialogs", 0),
       (assign, ":var3", 0),

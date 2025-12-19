@@ -1543,6 +1543,7 @@ coop_team_ratio
 coop_team_1_faction
 coop_team_2_faction
 coop_battle_size
+pendor_player_stats_dict
 coop_set_add_to_servers_list
 coop_set_max_num_players
 coop_set_friendly_fire
@@ -1571,4 +1572,3 @@ coop_form_line_last_pos
 coop_agent_party
 coop_no_enemy_parties
 coop_no_ally_parties
-pendor_player_stats_dict

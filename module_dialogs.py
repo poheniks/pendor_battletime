@@ -10375,7 +10375,8 @@ dialogs = [
     [
       (eq, "$player_can_persuade_npc", 1),
     ],
-    "Perhaps I can persuade you to change your mind.",
+    #"Perhaps I can persuade you to change your mind.",
+    "Perhaps you should shut the fuck up...",
     "companion_quitting_persuasion",
     [
       (assign, "$player_can_persuade_npc", 0),
@@ -10387,7 +10388,7 @@ dialogs = [
       (store_skill_level, ":var1", skl_persuasion, "trp_player"),
       (le, ":var0", ":var1"),
     ],
-    "Hm. When you put it like that, I suppose I can stay a while longer, see if things improve.",
+    "Hm. When you put it like that, I suppose I can shut the fuck up.",
     "close_window",
     [
       (troop_get_slot, ":var0", "$map_talk_troop", 69),
@@ -10400,8 +10401,9 @@ dialogs = [
 
   [anyone, "companion_quitting_persuasion",
     [],
-    "I'm sorry, but I don't see your point. I am leaving whether you like it or not.",
-    "companion_quitting_response",
+    "I'm sorry, I'll be good little rat",
+    #"companion_quitting_response",
+    "close_window",
     []],
 
   [anyone, "companion_quitting_yes",
