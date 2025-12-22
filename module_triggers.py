@@ -803,7 +803,8 @@ triggers = [
           (store_random_in_range, ":var11", 0, 100),
           (val_add, ":var10", ":var11"),
           (lt, ":var10", 20),
-          (assign, "$npc_is_quitting", ":var6"),
+          #disable conversation flag for npc quitting
+          #(assign, "$npc_is_quitting", ":var6"),
         (try_end),
         (troop_get_slot, ":var5", ":var6", 77),
         (val_mul, ":var5", 90),
