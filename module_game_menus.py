@@ -3192,6 +3192,15 @@ game_menus = [
       ]
       ),
 
+#PENDOR BATTLETIME CUSTOM ITEMS
+    ("custom_items",
+        [],
+        "Custom_Items",
+        [
+            (jump_to_menu, "mnu_cheat_find_item"),
+        ]
+    ),
+
       ("resume_travelling",
       [],
       "Resume_travelling.",
