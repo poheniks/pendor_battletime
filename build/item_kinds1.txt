@@ -1,5 +1,5 @@
 itemsfile version 3
-1636
+1676
  itm_no_item INVALID_ITEM INVALID_ITEM 1  invalid_item 0  12582914 9223388529554358287 3 0 1.500000 100 0 0 0 0 16384 103 0 90 0 522 528
  0
 0
@@ -4866,7 +4866,7 @@ itemsfile version 3
 1
 -51.000000  4 600 1 1152921504606847614 720 2 1 27 721 2 1 36 1969 3 1008806316530991136 1 15 
 
- itm_blunderbus Blunderbus Blunderbus 1  handgonne_chis_d 0  4644337391501329 555393482752 8000 132106 5.500000 1 0 0 98 0 0 49 150 0 1 331 0
+ itm_blunderbus Blunderbus Blunderbus 1  handgonne_chis_d 0  4644337391501329 555393482752 8000 132106 5.500000 1 0 0 99 0 0 52 150 0 3 332 0
  0
 1
 -51.000000  19 2071 1 72057594037927937 6 3 1224979098644774912 1 6 700 2 2 1 2124 1 100 2133 2 1224979098644774913 -350 2133 2 1224979098644774914 570 2136 3 1224979098644774915 -200 201 2105 2 1224979098644774914 1224979098644774915 738 2 2 9000 739 2 2 1224979098644774914 738 2 2 -9000 2136 3 1224979098644774916 -200 201 2105 2 1224979098644774913 1224979098644774916 738 2 2 1224979098644774913 1829 7 72057594037927937 2 8000 288230376151712884 0 288230376151712905 0 3 0 600 1 1152921504606847614 721 2 1 95 1969 3 1008806316530991136 1 15 
@@ -5905,7 +5905,7 @@ itemsfile version 3
  0
 0
 
- itm_sarleon_banner Banner_of_Sarleon Banner_of_Sarleon 1  sarleon_lance3 0  2251802099863556 27021597965549824 10020 9226 2.750000 100 0 0 0 25 0 95 0 267 0 296 0
+ itm_sarleon_banner Banner_of_Sarleon Banner_of_Sarleon 1  sarleon_lance3 0  2251802099863556 27021597965549824 10020 9226 2.750000 100 0 0 0 25 0 105 0 267 0 299 0
  1
  15
 0
@@ -6716,19 +6716,19 @@ itemsfile version 3
  0
 0
 
- itm_griffon_mount Peter_Griffon Peter_Griffon 1  MTMDemi 0  65537 0 20002 110595670016 0.000000 1 0 70 0 8 350 37 37 0 0 558 0
+ itm_griffon_mount Peter_Griffon Peter_Griffon 1  MTMDemi 0  65537 0 20002 110595670016 0.000000 1 0 80 0 9 450 43 43 0 0 562 0
  0
 0
 
- itm_griffon_mount_grey Griffon Griffon 1  MTMDemi2 0  65537 0 20002 110595670016 0.000000 1 0 65 0 8 300 38 38 94 0 552 0
+ itm_griffon_mount_grey Griffon Griffon 1  MTMDemi2 0  65537 0 20002 110595670016 0.000000 1 0 70 0 8 350 38 39 94 0 558 0
  0
 0
 
- itm_griffon_mount_black Griffon Griffon 1  MTMDemi3 0  65537 0 20002 110595670016 0.000000 1 0 65 0 8 300 38 38 94 0 552 0
+ itm_griffon_mount_black Griffon Griffon 1  MTMDemi3 0  65537 0 20002 110595670016 0.000000 1 0 70 0 8 350 38 39 94 0 558 0
  0
 0
 
- itm_griffon_mount_brown Griffon Griffon 1  MTMDemi4 0  65537 0 20002 110595670016 0.000000 1 0 65 0 8 300 38 38 94 0 552 0
+ itm_griffon_mount_brown Griffon Griffon 1  MTMDemi4 0  65537 0 20002 110595670016 0.000000 1 0 70 0 8 350 38 39 94 0 558 0
  0
 0
 
@@ -6908,7 +6908,7 @@ itemsfile version 3
  0
 0
 
- itm_ivorysword Ivory_Glory_Sword Ivory_Glory_Sword 1  ivorysword 0  6356995 9223635924301119728 3653 222228 1.500000 3 0 0 0 21 53248 133 0 147 0 304 60
+ itm_ivorysword Ivory_Glory_Sword Ivory_Glory_Sword 1  ivorysword 0  6356995 9223635924301119728 3653 222228 1.500000 3 0 0 0 21 53248 135 0 147 0 300 59
  0
 0
 
@@ -6932,11 +6932,11 @@ itemsfile version 3
  0
 0
 
- itm_moonspear Moon_Spear Moon_Spear 1  moonspear 0  2251800891949060 31243728790228224 247 9226 2.500000 100 0 0 0 20 12288 108 0 198 0 306 64
+ itm_moonspear Moon_Spear Moon_Spear 1  moonspear 0  2251800891949060 31243728790228224 247 9226 2.500000 100 0 0 0 20 12288 125 0 198 0 296 58
  0
 0
 
- itm_savage_throwing Savage_Pila Savage_Pila 1  pilum100BClight 0  71368714 6174277632 595 4398046781448 8.000000 20 0 0 0 6 0 97 43 81 20 306 0
+ itm_savage_throwing Savage_Pila Savage_Pila 1  jarid_rune_s 0  71368714 6174277632 595 4398046781448 6.000000 20 0 0 0 6 0 130 45 61 26 322 0
  1
  19
 0
@@ -6945,7 +6945,173 @@ itemsfile version 3
  0
 0
 
- itm_cho_crossbow Repeating_Crossbow Repeating_Crossbow 1  cho 0  274792457 5637160960 5383 132106 5.750000 100 0 0 91 21 0 45 85 0 8 325 0
+ itm_cho_crossbow Repeating_Crossbow Repeating_Crossbow 1  cho 0  274792457 5637160960 5383 132106 5.750000 100 0 0 91 21 0 42 83 0 8 328 0
+ 0
+0
+
+ itm_sapphire_horse Sapphire_Warhorse Sapphire_Warhorse 1  warhorse_steel_sapphire 0  1 0 10004 110595670016 0.000000 1 0 80 0 7 300 44 46 112 0 557 0
+ 1
+ 15
+0
+
+ itm_ruby_horse Ruby_Warhorse Ruby_Warhorse 1  warhorse_steel_ruby 0  1 0 10004 110595670016 0.000000 1 0 100 0 7 400 38 41 112 0 565 0
+ 1
+ 15
+0
+
+ itm_emerald_horse Emerald_Warhorse Emerald_Warhorse 1  warhorse_steel_emerald 0  1 0 10004 110595670016 0.000000 1 0 80 0 7 500 43 44 112 0 560 0
+ 1
+ 15
+0
+
+ itm_saphire_dagger Sapphire_Rune_Dagger Sapphire_Rune_Dagger 2  dagger_rune_s 0  dagger_rune_s_scabbard 3458764513820540928  12664834 9223372072044986383 41 222228 0.500000 100 0 0 0 0 22528 180 0 47 0 289 40
+ 0
+0
+
+ itm_ruby_dagger Ruby_Rune_Dagger Ruby_Rune_Dagger 2  dagger_rune_r 0  dagger_rune_r_scabbard 3458764513820540928  12664834 9223372072044986383 41 222228 1.000000 100 0 0 0 0 22528 124 0 47 0 291 296
+ 0
+0
+
+ itm_emerald_dagger Emerald_Rune_Dagger Emerald_Rune_Dagger 2  dagger_rune_e 0  dagger_rune_e_scabbard 3458764513820540928  12664834 9223372072044986383 41 222228 0.750000 100 0 0 0 0 22528 152 0 47 0 293 47
+ 0
+0
+
+ itm_sapphire_bastard_sword Sapphire_Rune_Bastard_Sword Sapphire_Rune_Bastard_Sword 2  bastard_sword_rune_s 0  bastard_sword_rune_s_scabbard 3458764513820540928  4259843 9223635954298781951 305 222228 1.000000 100 0 0 0 15 35840 139 0 125 0 291 53
+ 0
+0
+
+ itm_ruby_bastard_sword Ruby_Rune_Bastard_Sword Ruby_Rune_Bastard_Sword 2  bastard_sword_rune_r 0  bastard_sword_rune_r_scabbard 3458764513820540928  4259843 9223635954298781951 305 222228 2.000000 100 0 0 0 15 35840 109 0 125 0 296 294
+ 0
+0
+
+ itm_emerald_bastard_sword Emerald_Rune_Bastard_Sword Emerald_Rune_Bastard_Sword 2  bastard_sword_rune_e 0  bastard_sword_rune_e_scabbard 3458764513820540928  4259843 9223635954298781951 305 222228 1.500000 100 0 0 0 15 35840 118 0 130 0 296 61
+ 0
+0
+
+ itm_sapphire_2h_axe Sapphire_Rune_Two-handed_Axe Sapphire_Rune_Two-handed_Axe 1  th_axe_s 0  279246540803 9223635923965575392 3635 393236 3.000000 1 0 0 0 20 61440 130 0 131 0 256 63
+ 0
+0
+
+ itm_ruby_2h_axe Ruby_Rune_Two-handed_Axe Ruby_Rune_Two-handed_Axe 1  th_axe_r 0  279246540803 9223635923965575392 3635 393236 5.000000 1 0 0 0 20 61440 95 0 131 0 256 319
+ 0
+0
+
+ itm_emerald_2h_axe Emerald_Rune_Two-handed_Axe Emerald_Rune_Two-handed_Axe 1  th_axe_e 0  279246540803 9223635923965575392 3635 393236 4.000000 1 0 0 0 20 61440 110 0 131 0 256 73
+ 0
+0
+
+ itm_sapphire_hammer Sapphire_Rune_Hammer Sapphire_Rune_Hammer 1  sw_warhammer_blue 0  313537134595 9223635925844623598 707 393236 4.500000 30 0 0 0 22 36864 122 0 100 0 256 562
+ 0
+0
+
+ itm_ruby_hammer Ruby_Rune_Hammer Ruby_Rune_Hammer 1  sw_warhammer_red 0  313537134595 9223635925844623598 707 393236 5.500000 30 0 0 0 22 36864 90 0 80 0 256 582
+ 0
+0
+
+ itm_emerald_hammer Emerald_Rune_Hammer Emerald_Rune_Hammer 1  sw_warhammer_green 0  313537134595 9223635925844623598 707 393236 6.000000 30 0 0 0 22 36864 102 0 116 0 256 567
+ 0
+0
+
+ itm_sapphire_lance Sapphire_Rune_Lance Sapphire_Rune_Lance 1  lance_rune_s 0  2251802099863556 27021597965549824 10020 9226 3.500000 100 0 0 0 15 0 120 0 280 0 296 0
+ 1
+ 15
+0
+
+ itm_ruby_lance Ruby_Rune_Lance Ruby_Rune_Lance 1  lance_rune_r 0  2251802099863556 27021597965549824 10020 9226 4.500000 100 0 0 0 20 0 95 0 270 0 306 0
+ 1
+ 15
+0
+
+ itm_emerald_lance Emerald_Rune_Lance Emerald_Rune_Lance 1  lance_rune_e 0  2251802099863556 27021597965549824 10020 9226 4.000000 100 0 0 0 20 0 116 0 290 0 301 0
+ 1
+ 15
+0
+
+ itm_sapphire_spear Sapphire_Rune_Spear Sapphire_Rune_Spear 1  spear_rune_s 0  2251800891949060 31243728790228224 247 9226 2.000000 100 0 0 0 12 12288 140 0 152 0 301 537
+ 0
+0
+
+ itm_ruby_spear Ruby_Rune_Spear Ruby_Rune_Spear 1  spear_rune_r 0  2251800891949060 31243728790228224 247 9226 3.000000 100 0 0 0 12 12288 105 0 152 0 311 547
+ 0
+0
+
+ itm_emerald_spear Emerald_Rune_Spear Emerald_Rune_Spear 1  spear_rune_e 0  2251800891949060 31243728790228224 247 9226 2.500000 100 0 0 0 12 12288 128 0 153 0 306 542
+ 0
+0
+
+ itm_ruby_daggers Ruby_Rune_Throwing_Daggers Ruby_Rune_Throwing_Daggers 1  throwing_knife_rune_1_s 0  4259850 131072 210 4398046781448 4.000000 100 0 0 0 0 0 175 55 0 27 311 0
+ 0
+0
+
+ itm_emerald_dirks Emerald_Rune_Throwing_Dirks Emerald_Rune_Throwing_Dirks 1  throwing_knife_rune_2_e 0  4259850 131072 210 4398046781448 3.300000 100 0 0 0 0 0 147 50 0 35 301 0
+ 0
+0
+
+ itm_sapphire_crossbow Sapphire_Rune_Crossbow Sapphire_Rune_Crossbow 1  crossbow_c_blue 0  274792457 5637160960 5383 132106 3.500000 100 0 0 95 18 0 65 85 0 1 361 0
+ 0
+0
+
+ itm_ruby_crossbow Ruby_Rune_Crossbow Ruby_Rune_Crossbow 1  crossbow_c_red 0  274792457 5637160960 5383 132106 5.500000 100 0 0 93 18 0 45 98 0 1 391 0
+ 0
+0
+
+ itm_emerald_crossbow Emerald_Rune_Crossbow Emerald_Rune_Crossbow 1  crossbow_c_green 0  274792457 5637160960 5383 132106 4.500000 100 0 0 92 18 0 45 85 0 8 348 0
+ 0
+0
+
+ itm_sharpshooter_bolts Sharpshooter_Bolts Sharpshooter_Bolts 4  bolt_snake 0  flying_missile 2305843009213693952  bolt_bag_snake 3458764513820540928  bolt_bag_snake 1152921504606846976  16842758 1879048192 2300 4398046511112 2.500000 3 0 0 0 0 0 0 0 63 60 278 0
+ 0
+0
+
+ itm_sentinel_arrows Sentinel_Arrows Sentinel_Arrows 4  arrow_snake 0  flying_missile 2305843009213693952  quiver_snake 3458764513820540928  quiver_snake 1152921504606846976  5 1610612736 5500 4398046511112 3.000000 1 0 0 0 0 0 0 0 89 60 268 0
+ 0
+0
+
+ itm_sapphire_rune_shield Sapphire_Rune_Shield Sapphire_Rune_Shield 1  shield_rune_s 0  7 4831838208 4101 167772194 3.500000 1 0 35 0 5 1200 135 57 29 0 0 0
+ 0
+0
+
+ itm_ruby_rune_shield Ruby_Rune_Shield Ruby_Rune_Shield 1  shield_rune_r 0  7 4831838208 4101 167772194 4.500000 1 0 40 0 5 1500 95 57 29 0 0 0
+ 0
+0
+
+ itm_emerald_rune_shield Emerald_Rune_Shield Emerald_Rune_Shield 1  shield_rune_e 0  7 4831838208 4101 167772194 4.000000 1 0 35 0 5 1600 100 57 29 0 0 0
+ 0
+0
+
+ itm_silver_sapphire_rune_plate Silver_Sapphire_Rune_Plate Silver_Sapphire_Rune_Plate 1  rune_armor_wh_s_cape 0  553652237 0 35010 973078948 12.000000 1 7 70 30 15 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_silver_ruby_rune_plate Silver_Ruby_Rune_Plate Silver_Ruby_Rune_Plate 1  rune_armor_wh_r_cape 0  553652237 0 35030 973078948 32.000000 1 11 75 34 35 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_silver_emerald_rune_plate Silver_Emerald_Rune_Plate Silver_Emerald_Rune_Plate 1  rune_armor_wh_e_cape 0  553652237 0 35020 973078948 20.000000 1 9 73 32 25 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ebony_sapphire_rune_plate Ebony_Sapphire_Rune_Plate Ebony_Sapphire_Rune_Plate 1  rune_armor_bl_s_cape 0  553652237 0 35010 973078948 12.000000 1 7 70 30 15 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ebony_ruby_rune_plate Ebony_Ruby_Rune_Plate Ebony_Ruby_Rune_Plate 1  rune_armor_bl_r_cape 0  553652237 0 35030 973078948 32.000000 1 11 75 34 35 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ebony_emerald_rune_plate Ebony_Emerald_Rune_Plate Ebony_Emerald_Rune_Plate 1  rune_armor_bl_e_cape 0  553652237 0 35020 973078948 20.000000 1 9 73 32 25 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_azure_sapphire_rune_plate Azure_Sapphire_Rune_Plate Azure_Sapphire_Rune_Plate 1  rune_armor_azure_s_cape 0  553652237 0 35010 973078948 12.000000 1 7 70 30 15 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_bronze_ruby_rune_plate_cape Bronze_Ruby_Rune_Plate_with_Cape Bronze_Ruby_Rune_Plate_with_Cape 1  rune_armor_lamellar_r_cape 0  553652237 0 35030 973078948 32.000000 1 11 75 34 35 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_viridian_emerald_rune_plate_cape Viridian_Emerald_Rune_Plate_with_Cape Viridian_Emerald_Rune_Plate_with_Cape 1  rune_armor_clarion_e_cape 0  553652237 0 35020 973078948 20.000000 1 9 73 32 25 0 0 0 0 0 0 0
  0
 0
 
