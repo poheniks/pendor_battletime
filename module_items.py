@@ -1310,8 +1310,8 @@ items = [
         #The engine doesn't appear to use Euler angles to give perfect precision...
         #Under all circumstances, so this will be off a bit if firing way up or down.	
         (set_fixed_point_multiplier, 100),
-        (assign, ":x_fix", -350),#-3.5 degrees
-        (assign, ":z_fix", 570),#5.7 degrees
+        (assign, ":x_fix", 0),#this just breaks it
+        (assign, ":z_fix", 0),#this just breaks it
         #The following line is our "choke" adjustment on the Z axis.
         #Unless you need a fan pattern, You'll want to keep the change...
         #The same for X and Z, but Z needs to be applied through the special fix below.
